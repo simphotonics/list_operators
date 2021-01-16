@@ -1,5 +1,5 @@
 # List Operators
-[![Build Status](https://travis-ci.com/simphotonics/simulated_annealing.svg?branch=main)](https://travis-ci.com/simphotonics/simulated_annealing)
+[![Build Status](https://travis-ci.com/simphotonics/list_operators.svg?branch=main)](https://travis-ci.com/simphotonics/list_operators)
 
 ## Introduction
 The package [`list_operators`][list_operators] provides operators for objects of type `List<num>` and
