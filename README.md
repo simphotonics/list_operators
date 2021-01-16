@@ -3,12 +3,12 @@
 
 ## Introduction
 The package [`list_operators`][list_operators] provides operators for objects of type `List<num>` and
-`List<T extends Comparable`. (A built in Dart class extending `Comparable` is for example `String`.)
+`List<T extends Comparable`.
 
 ## Usage
 To use this package include [`list_operatos`][list_operators] as a `dependency` in your `pubspec.yaml` file. The program below demonstrates how to use the operators and methods defined by the library `list_operators`.
 
-Note: The `+` operator (concatenates two lists) is already in use and therefore cannot be overridden by an extension on `List`.
+Note: The `+` operator (concatenates two lists) is already defined by Dart's abstract class `List` and cannot be overridden by an extension on `List`. To add two numerical lists with same length use the method `List<num> plus(List<num> other)`.
 
 ```Dart
 import 'package:list_operators/list_operators.dart';
@@ -51,7 +51,7 @@ void main(List<String> args) {
   print(a > b);
 
   print('\nb >= b:');
-  print(b >= a);
+  print(b >= b);
 
   final s1 = ['a1', 'a2'];
   final s2 = ['b1', 'b2'];
@@ -63,7 +63,31 @@ void main(List<String> args) {
   print('\nConcatenation:');
   print(a + b);
 
+  /// Exporting numerical lists to a `String` object.
+  print('\nExporting lists to String:');
+  print(a.export(
+    label: 'Sample label',
+    delimiter: ', ',
+    precision: 4,
+  ));
 
+  print('\nExporting an object of type List<List<num>> to String:');
+  print('Each inner list is exported as a row.');
+  print([
+    [1, 2, 3],
+    [101, 102, 103]
+  ].export(label: 'Sample label', precision: 6));
+
+  print('\nExporting an object of type List<List<num>> to String.');
+  print('Inner lists are exported as columns.');
+  print([
+    [1, 2, 3],
+    [101, 102, 103]
+  ].export(
+    label: 'Sample label',
+    precision: 6,
+    flip: true,
+  ));
 }
 
 ```
