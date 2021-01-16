@@ -133,6 +133,27 @@ true
 Concatenation:
 [1, 2, 3, 11, 12, 13]
 
+Exporting lists to String:
+Sample label
+1.000,
+2.000,
+3.000,
+
+
+Exporting an object of type List<List<num>> to String:
+Each inner list is exported as a row.
+Sample label
+1.00000 2.00000 3.00000
+101.000 102.000 103.000
+
+
+Exporting an object of type List<List<num>> to String.
+Inner lists are exported as columns.
+Sample label
+1.00000 101.000
+2.00000 102.000
+3.00000 103.000
+
 ```
 </details>
 
