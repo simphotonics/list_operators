@@ -50,6 +50,6 @@ echo
 pub run --enable-experiment=non-nullable minimal_test:minimal_test.dart
 
 echo
-echo -e "${BLUE}=== Running Examples $PWD/example ${RESET}"
+echo -e "${BLUE}=== Running Example $PWD/example ${RESET}"
 echo
-#dart --enable-experiment=non-nullable example/bin/sample_statistics_example.dart
+dart --enable-experiment=non-nullable example/bin/example.dart
