@@ -154,7 +154,7 @@ Inner lists are exported as columns.
 Sample label
 1.00000 101.000
 2.00000 102.000
-3.00000 103.000 
+3.00000 103.000
 
 ```
 
@@ -162,7 +162,7 @@ Sample label
 
 ## Examples
 
-The program shown above is included in the folder [`example`][example].
+The program shown above is included in the folder [`example`](example).
 
 ## Features and bugs
 
