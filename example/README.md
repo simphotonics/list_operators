@@ -5,7 +5,7 @@ To run the program shown below navigate to the
 root folder of your local copy of [list_operators] and
 issue the command:
 ```Console
-$dart --enble-experiment=non-nullable example/bin/example.dart
+$dart --enable-experiment=non-nullable example/bin/example.dart
 ```
 
 ```Dart

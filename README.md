@@ -2,8 +2,7 @@
 [![Build Status](https://travis-ci.com/simphotonics/list_operators.svg?branch=main)](https://travis-ci.com/simphotonics/list_operators)
 
 ## Introduction
-The package [`list_operators`][list_operators] provides operators for objects of type `List<num>` and
-`List<T extends Comparable>`.
+The package [`list_operators`][list_operators] uses Dart extensions to provide additional operators for objects of type `List<num>` and `List<T extends Comparable>`. 
 
 ## Usage
 To use this package include [`list_operatos`][list_operators] as a `dependency` in your `pubspec.yaml` file. The program below demonstrates how to use the operators and methods defined by the library `list_operators`.
