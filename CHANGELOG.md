@@ -1,3 +1,7 @@
+## 0.1.0-nullsafety
+
+- Min. Dart SDK version now 2.12.0-0.
+
 ## 0.0.3-nullsafety
 
 - Removed `lazy_memo` from list of dependencies.
