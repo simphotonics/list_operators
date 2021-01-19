@@ -13,5 +13,5 @@ dependencies:
   exception_templates: ^0.2.0-nullsafety
 
 dev_dependencies:
-  minimal_test: ^2.0.0-nullsafety
+  minimal_test: ^2.0.1-nullsafety
   pedantic: ^1.9.2
