@@ -16,6 +16,9 @@ void main(List<String> args) {
   final b = [11, 12, 13];
 
   /// Use with List<num>
+  print('Absolute value:');
+  print((a - b).abs());
+
   print('Addition:');
   print(a.plus(b));
 
@@ -94,6 +97,9 @@ void main(List<String> args) {
 ```Console
 
 dan@nano:~/list_operators$ dart example/bin/example.dart
+Absolute value:
+[10, 10, 10]
+
 Addition:
 [12, 14, 16]
 

@@ -4,9 +4,10 @@ import 'assertions.dart';
 
 /// Extension providing operators for objects of type List<num>.
 extension NumericalOperations on List<num> {
-  /// Adds two numerical lists of same length.
+  /// Returns a new list consisting of the entries of `this` added to
+  /// the entries of `other`.
   ///
-  /// Note: The operator `+` concatenates two lists.
+  /// Note: The operator `+` is already in use and concatenates two lists.
   List<num> plus(List<num> other) {
     assertSameLength(other, operatorSymbol: '+');
     return List<num>.generate(length, (i) => this[i] + other[i]);
@@ -17,7 +18,14 @@ extension NumericalOperations on List<num> {
     return List<num>.generate(length, (i) => math.pow(this[i], scalar));
   }
 
-  /// Subtracts two numerical lists of same length.
+  /// Returns a new list consisting of the absolute value of
+  /// the entries of `this`.
+  List<num> abs() {
+    return List<num>.generate(length, (i) => this[i].abs());
+  }
+
+  /// Returns a new list consisting of the difference of the elements of `this`
+  /// and `other`.
   List<num> operator -(List<num> other) {
     assertSameLength(other, operatorSymbol: '-');
     return List<num>.generate(length, (i) => this[i] - other[i]);
@@ -39,21 +47,21 @@ extension NumericalOperations on List<num> {
     return sum;
   }
 
-  /// Divides each component of `this` by `scalar`.
+  /// Returns a new list consisting of the entries of `this` divided by `scalar`.
   List<num> operator /(num scalar) {
     return List<num>.generate(length, (i) => this[i] / scalar);
   }
 
-  /// Divides each component of `this` by `scalar` and truncates
-  /// to obtain an integer.
+  /// Returns a new list consisting of the entries of of `this`
+  /// divided by `scalar` and truncated to obtain an integer.
   List<int> operator ~/(num scalar) {
     return List<int>.generate(length, (i) => this[i] ~/ scalar);
   }
 
-  /// Multiplies each component of `this` with `scalar`.
+  /// Returns a new list consting of the entries of `this` multiplied by `scalar`.
   ///
-  /// Note: The operator `*` is returns the scalar product
-  /// of two numerical lists.
+  /// Note: The operator `*` used with two numerical lists returns the
+  /// scalar product of two lists.
   List<num> times(num scalar) {
     return List<num>.generate(length, (i) => this[i] * scalar);
   }

@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.com/simphotonics/list_operators.svg?branch=main)](https://travis-ci.com/simphotonics/list_operators)
 
 ## Introduction
-The package [`list_operators`][list_operators] uses Dart extensions to provide additional operators for objects of type `List<num>` and `List<T extends Comparable>`. 
+The package [`list_operators`][list_operators] uses Dart extensions to provide additional operators for objects of type `List<num>` and `List<T extends Comparable>`.
 
 ## Usage
 To use this package include [`list_operatos`][list_operators] as a `dependency` in your `pubspec.yaml` file. The program below demonstrates how to use the operators and methods defined by the library `list_operators`.
@@ -17,7 +17,10 @@ void main(List<String> args) {
   final b = [11, 12, 13];
 
   /// Use with List<num>
-  print('Addition:');
+  print('Absolute value:');
+  print((a - b).abs());
+
+  print('\nAddition:');
   print(a.plus(b));
 
   print('\nSubtraction:');
@@ -95,6 +98,9 @@ void main(List<String> args) {
 ```Console
 
 dan@nano:~/list_operators$ dart example/bin/example.dart
+Absolute value:
+[10, 10, 10]
+
 Addition:
 [12, 14, 16]
 

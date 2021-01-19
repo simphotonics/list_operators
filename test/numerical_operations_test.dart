@@ -27,6 +27,11 @@ void main(List<String> args) {
     });
   });
   group('Methods:', () {
+    test('abs()', () {
+      expect(a.abs(), [1, 2, 3]);
+      expect(b.times(-1).abs(), b);
+      expect((a - b).abs(), b - a);
+    });
     test('plus()', () {
       expect(a.plus(b), b.plus(a));
       expect(a.plus(b), [12, 14, 16]);

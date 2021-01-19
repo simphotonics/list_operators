@@ -4,8 +4,11 @@ void main(List<String> args) {
   final a = [1, 2, 3];
   final b = [11, 12, 13];
 
-  /// Use with List<num>
-  print('Addition:');
+  // Use with List<num>
+  print('Absolute value:');
+  print((a - b).abs());
+
+  print('\nAddition:');
   print(a.plus(b));
 
   print('\nSubtraction:');
