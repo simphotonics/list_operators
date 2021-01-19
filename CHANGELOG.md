@@ -1,6 +1,6 @@
 ## 0.1.1-nullsafety
 
-- Added method `abs()`(available for object of type `List<num>`).
+- Added method `abs()` which is available for objects of type `List<num>`.
 
 ## 0.1.0-nullsafety
 
