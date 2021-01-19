@@ -1,3 +1,7 @@
+## 0.1.1-nullsafety
+
+- Added method `abs()`(available for object of type `List<num>`).
+
 ## 0.1.0-nullsafety
 
 - Min. Dart SDK version now 2.12.0-0.
