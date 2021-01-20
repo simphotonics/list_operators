@@ -169,6 +169,15 @@ Sample label
 
 </details>
 
+## Limitations
+
+In its current version, Dart does not support function (and implicitly operator) overloading.
+For this reason some numerical operations defined by [`list_operators`][list_operators]
+are not symmetrical, even though intuitively they should be:
+- The expression `[1, 2, 3] * 10` is defined and the result is `[10, 20, 30]`.
+- `10 * [1, 2, 3]` is not available, since the `*` operator defined for objects of type `int`
+expects a second operand of type `num`.
+
 ## Examples
 
 The program shown above is included in the folder [`example`](example).

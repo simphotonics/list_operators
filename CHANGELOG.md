@@ -1,3 +1,7 @@
+## 0.1.3-nullsafety
+
+- Added section 'Limitations' to file `README.md`.
+
 ## 0.1.2-nullsafety
 
 - Added methods `min()`, `max()`, `mean()`, `stdDev()`, `abs()`, `innerProduct()`, and the unary minus operator.
