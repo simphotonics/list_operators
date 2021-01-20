@@ -2,7 +2,7 @@ name: list_operators
 
 description: Extensions providing additional operators and methods for Dart lists. The package uses null-safety features.
 
-version: 0.1.3-nullsafety
+version: 0.1.4-nullsafety
 
 homepage: https://github.com/simphotonics/list_operators
 

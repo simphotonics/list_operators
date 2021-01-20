@@ -1,3 +1,8 @@
+## 0.1.4-nullsafety
+
+- Corrected bugs in functions `mean()` and `stdDev()`.
+- Added tests.
+
 ## 0.1.3-nullsafety
 
 - Added section 'Limitations' to file `README.md`.
