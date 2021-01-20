@@ -49,12 +49,20 @@ void main(List<String> args) {
     test('pow()', () {
       expect(n1.pow(2), [1, 4, 9]);
     });
-    test('min', () {
+    test('min()', () {
       expect([0.7, -0.3, 1, 55].min(), -0.3);
       expect([1, 1, 2, 2].min(), 1);
     });
-    test('max', () {
+    test('max()', () {
       expect([7, 8, -9].max(), 8);
+    });
+    test('mean()', () {
+      expect([1, 2, 3].mean(), 2);
+      expect([3.0, 3.0, 3.0].mean(), 3.0);
+    });
+    test('stdDev()', () {
+      expect([1, 2, 3].stdDev(), 1.0);
+      expect([-1, 0, 1].stdDev(), 1.0);
     });
   });
   group('Comparisons:', () {
