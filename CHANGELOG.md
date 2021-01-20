@@ -1,3 +1,7 @@
+## 0.1.2-nullsafety
+
+- Added methods `min()`, `max()`, `mean()`, `stdDev()`, `abs()`, `innerProduct()`, and the unary minus operator.
+
 ## 0.1.1-nullsafety
 
 - Added method `abs()` which is available for objects of type `List<num>`.
