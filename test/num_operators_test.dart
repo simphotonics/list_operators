@@ -16,7 +16,7 @@ void main(List<String> args) {
     test('-', () {
       expect(n2 - n1, <num>[10, 10, 10]);
       expect((n2 - n1).runtimeType, listOfNum);
-      expect(n2 - i1, <double>[10, 10, 10]);
+      expect(n2 - i1, <num>[10, 10, 10]);
       expect((n2 - d1).runtimeType, listOfNum);
     });
 

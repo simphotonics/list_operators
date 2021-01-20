@@ -14,9 +14,9 @@ void main(List<String> args) {
 
   group('Numerical operators:', () {
     test('-', () {
-      expect(i2 - i1, <num>[10, 10, 10]);
+      expect(i2 - i1, <int>[10, 10, 10]);
       expect((i2 - i1).runtimeType, listOfInt);
-      expect(i2 - n1.toInt(), <double>[10, 10, 10]);
+      expect(i2 - n1.toInt(), <int>[10, 10, 10]);
       expect((i2 - d1.toInt()).runtimeType, listOfInt);
     });
 
