@@ -74,21 +74,21 @@ extension NumOperators on List<num> {
   /// * The list must have at least one element.
   num min() {
     assertHasElements();
-    return reduce((value, element) => math.min(value, element));
+    return reduce((value, element) => math.min<num>(value, element));
   }
 
   /// Returns the maximum value.
   /// * The list must have at least one element.
   num max() {
     assertHasElements();
-    return reduce((value, element) => math.max(value, element));
+    return reduce((value, element) => math.max<num>(value, element));
   }
 
   /// Returns the mean of the list elements.
   /// * The list must have at least one element.
   num mean() {
     assertHasElements(n: 1);
-    return reduce((sum, element) => sum + element) / length;
+    return fold<num>(0.0, (sum, element) => sum + element) / length;
   }
 
   /// Returns the corrected standard deviation of the list elements.
