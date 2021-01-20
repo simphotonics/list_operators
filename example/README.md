@@ -25,11 +25,11 @@ void main(List<String> args) {
   print('\nSubtraction:');
   print(b - a);
 
-  print('\nScalar product:');
-  print(a * b);
+  print('\nInner product:');
+  print(a.innerProduct(b));
 
   print('\nMultiplication:');
-  print(a.times(10));
+  print(a * 10);
 
   print('\nPower');
   print(a.pow(2));
@@ -106,7 +106,7 @@ Addition:
 Subtraction:
 [10, 10, 10]
 
-Scalar product:
+Inner product:
 74
 
 Multiplication:

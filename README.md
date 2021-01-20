@@ -5,9 +5,13 @@
 The package [`list_operators`][list_operators] uses Dart extensions to provide additional operators for objects of type `List<num>` and `List<T extends Comparable>`.
 
 ## Usage
-To use this package include [`list_operatos`][list_operators] as a `dependency` in your `pubspec.yaml` file. The program below demonstrates how to use the operators and methods defined by the library `list_operators`.
+To use this package include [`list_operatos`][list_operators] as a `dependency` in your `pubspec.yaml` file.
+The program below demonstrates how to use some of the operators and methods defined by the library `list_operators`.
 
-Note: The `+` operator (concatenates two lists) is already defined by Dart's abstract class `List` and cannot be overridden by an extension on `List`. To add two numerical lists with same length use the method: `List<num> plus(List<num> other)`.
+Note: The `+` operator (concatenates two lists) is already defined by Dart's abstract class `List` and
+cannot be overridden by an extension on `List`.
+To add two numerical lists element by element use the method: `List<num> plus(List<num> other)`.
+
 
 ```Dart
 import 'package:list_operators/list_operators.dart';
@@ -26,11 +30,11 @@ void main(List<String> args) {
   print('\nSubtraction:');
   print(b - a);
 
-  print('\nScalar product:');
-  print(a * b);
+  print('\nInner product:');
+  print(a.innerProduct(b));
 
   print('\nMultiplication:');
-  print(a.times(10));
+  print(a * 10);
 
   print('\nPower');
   print(a.pow(2));
