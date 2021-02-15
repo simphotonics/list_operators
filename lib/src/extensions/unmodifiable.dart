@@ -1,6 +1,5 @@
 import 'dart:collection';
 
-
 /// Extension providing the method `unmodifiable()`.
 extension Unmodifiable<T> on List<T> {
   /// Returns an unmodifiable list view of this.
