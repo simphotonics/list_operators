@@ -1,3 +1,9 @@
+## 0.1.5-nullsafety
+
+- Added the method `unmodifiable()` defined or object of type `List<List<T>>`
+  and returning an object of type `UnmodifiableListView<UnmodifiableListView<T>>`.
+
+
 ## 0.1.4-nullsafety
 
 - Corrected bugs in functions `mean()` and `stdDev()`.
