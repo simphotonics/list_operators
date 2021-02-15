@@ -8,3 +8,4 @@ export 'src/extensions/export.dart';
 export 'src/extensions/double_operators.dart';
 export 'src/extensions/int_operators.dart';
 export 'src/extensions/num_operators.dart';
+export 'src/extensions/unmodifiable.dart';
