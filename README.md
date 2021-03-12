@@ -94,6 +94,19 @@ void main() {
     precision: 6,
     flip: true,
   ));
+
+  // Creating an unmodifiable list view (recursively)
+  print('\nCreating an unmodifiable list view.');
+  final list = [
+    ['one'],
+    ['two'],
+  ];
+
+  // Extension works for object of type List<T> and List<List<T>>
+  final listView = list.unmodifiable();
+
+  // Prints: UnmodifiableListView<UnmodifiableListView<String>>
+  print(listView.runtimeType);
 }
 
 ```
@@ -168,6 +181,7 @@ Sample label
 ```
 
 </details>
+
 
 ## Limitations
 

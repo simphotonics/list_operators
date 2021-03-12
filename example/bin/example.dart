@@ -77,4 +77,17 @@ void main() {
     precision: 6,
     flip: true,
   ));
+
+  // Creating an unmodifiable list view (recursively)
+  print('\nCreating a recursive unmodifiable list view.');
+  final list = [
+    ['one'],
+    ['two'],
+  ];
+
+  // Extension works for object of type List<T> and List<List<T>>
+  final listView = list.unmodifiable();
+
+  // Prints: UnmodifiableListView<UnmodifiableListView<String>>
+  print('$list   runtimeType: ${listView.runtimeType}');
 }
