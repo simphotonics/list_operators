@@ -1,3 +1,7 @@
+## 0.2.0
+
+- Switched back to default test suite.
+
 ## 0.1.5-nullsafety
 
 - Added the method `unmodifiable()` defined or object of type `List<List<T>>`
