@@ -16,7 +16,7 @@ To add two numerical lists element by element use the method: `List<num> plus(Li
 ```Dart
 import 'package:list_operators/list_operators.dart';
 
-void main(List<String> args) {
+void main() {
   final a = [1, 2, 3];
   final b = [11, 12, 13];
 
