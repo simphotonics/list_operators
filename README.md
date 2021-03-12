@@ -96,7 +96,7 @@ void main() {
   ));
 
   // Creating an unmodifiable list view (recursively)
-  print('\nCreating an unmodifiable list view.');
+  print('\nCreating an unmodifiable list of an object of type List<List<T>>:');
   final list = [
     ['one'],
     ['two'],
@@ -177,6 +177,10 @@ Sample label
 1.00000 101.000
 2.00000 102.000
 3.00000 103.000
+
+
+Creating an unmodifiable list view of an object of type List<List<T>>:
+[[one], [two]]   runtimeType: UnmodifiableListView<UnmodifiableListView<String>>
 
 ```
 

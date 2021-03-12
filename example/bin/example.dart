@@ -79,7 +79,9 @@ void main() {
   ));
 
   // Creating an unmodifiable list view (recursively)
-  print('\nCreating a recursive unmodifiable list view.');
+  print(
+    '\nCreating an unmodifiable list view of an object of type List<List<T>>:',
+  );
   final list = [
     ['one'],
     ['two'],
@@ -89,5 +91,5 @@ void main() {
   final listView = list.unmodifiable();
 
   // Prints: UnmodifiableListView<UnmodifiableListView<String>>
-  print('$list   runtimeType: ${listView.runtimeType}');
+  print('$listView   runtimeType: ${listView.runtimeType}');
 }
