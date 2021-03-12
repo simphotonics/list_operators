@@ -85,7 +85,7 @@ void main() {
     ['two'],
   ];
 
-  // Extension works for object of type List<T> and List<List<T>>
+  // Extension works for objects of type List<T> and List<List<T>>
   final listView = list.unmodifiable();
 
   // Prints: UnmodifiableListView<UnmodifiableListView<String>>
