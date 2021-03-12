@@ -1,10 +1,10 @@
 import 'dart:math';
 
-import 'package:minimal_test/minimal_test.dart';
+import 'package:test/test.dart';
 
 import 'package:list_operators/list_operators.dart';
 
-void main(List<String> args) {
+void main() {
   final a = [pi, 2.0 * pi, 3.0 * pi];
   final b = [a, a / pi, a / (0.5 * pi)];
 

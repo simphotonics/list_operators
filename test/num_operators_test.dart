@@ -1,10 +1,10 @@
 import 'package:exception_templates/exception_templates.dart';
-import 'package:minimal_test/minimal_test.dart';
+import 'package:test/test.dart';
 
 import 'package:list_operators/src/exceptions/incompatible_lists.dart';
 import 'package:list_operators/list_operators.dart';
 
-void main(List<String> args) {
+void main() {
   final i1 = [1, 2, 3];
   final n1 = [1, 2.0, 3];
   final n2 = [11, 12.0, 13];

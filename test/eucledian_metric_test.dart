@@ -2,11 +2,11 @@ import 'dart:math';
 
 import 'package:exception_templates/exception_templates.dart';
 import 'package:list_operators/src/exceptions/incompatible_lists.dart';
-import 'package:minimal_test/minimal_test.dart';
+import 'package:test/test.dart';
 
 import 'package:list_operators/list_operators.dart';
 
-void main(List<String> args) {
+void main() {
   group('distanceFromOrigin:', () {
     test('[]', () {
       expect(<num>[].distanceFromOrigin, 0);

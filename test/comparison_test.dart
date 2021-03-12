@@ -1,8 +1,8 @@
-import 'package:minimal_test/minimal_test.dart';
+import 'package:test/test.dart';
 
 import 'package:list_operators/list_operators.dart';
 
-void main(List<String> args) {
+void main() {
   group('Comparison', () {
     test('operator <', () {
       expect(['a1', 'a2'] < ['b1', 'b2'], true);

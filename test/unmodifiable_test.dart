@@ -1,10 +1,10 @@
 import 'dart:collection';
 
-import 'package:minimal_test/minimal_test.dart';
+import 'package:test/test.dart';
 
 import 'package:list_operators/list_operators.dart';
 
-void main(List<String> args) {
+void main() {
   final i1 = [1, 2, 3];
   final i2 = [i1];
   final u1 = UnmodifiableListView(i1);
