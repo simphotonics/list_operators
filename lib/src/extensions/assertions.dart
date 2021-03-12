@@ -7,7 +7,7 @@ extension Assertions<T> on List<T> {
   void assertSameLength(List other, {String operatorSymbol = ''}) {
     if (length != other.length) {
       throw ErrorOfType<IncompatibleLists>(
-          message: 'Error using \'$operatorSymbol\' with ${runtimeType}.',
+          message: 'Error using \'$operatorSymbol\' with $runtimeType.',
           invalidState: 'Length of $this does not match length of $other.',
           expectedState: 'Two lists with the same length.');
     }
