@@ -10,6 +10,16 @@ import '../extensions/num_operators.dart';
 ///
 /// Note: All arguments are of type `Iterable<num>` and must have the
 /// same length in order to match.
+/// ---
+/// Usage:
+/// ```
+/// final actual = [9.5, 5, 2];
+/// final expected = [9.81, 5.7, 3];
+/// final delta = [0.5, 1.0, 1.0];
+/// test('Comparing numerical lists', (){
+///   expect(actual, orderedCloseTo(expected, delta));
+/// });
+/// ```
 Matcher orderedCloseTo(Iterable<num> expected, Iterable<num> delta) =>
     _OrderedCloseTo(expected, delta);
 
