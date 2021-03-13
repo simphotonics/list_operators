@@ -1,3 +1,11 @@
+## 0.2.1
+
+- Added custom matcher `orderedCloseTo` for matching numerical list
+  within a certain precision.
+- Amended numerical list operators to emulate the greediness of
+  numerical operations involving the type `double`.
+- Added tests to `num_operators_test.dart`.
+
 ## 0.2.0
 
 - Switched back to default test suite.
