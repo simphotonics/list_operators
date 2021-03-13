@@ -1,7 +1,6 @@
 import 'package:exception_templates/exception_templates.dart';
 import 'package:test/test.dart';
 
-import 'package:list_operators/src/exceptions/incompatible_lists.dart';
 import 'package:list_operators/list_operators.dart';
 
 void main() {
