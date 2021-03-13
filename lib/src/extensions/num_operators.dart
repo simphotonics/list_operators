@@ -10,11 +10,32 @@ extension NumOperators on List<num> {
   /// Note: The operator `+` is already in use and concatenates two lists.
   List<num> plus(List<num> other) {
     assertSameLength(other, operatorSymbol: '+');
+    if (this is List<int> && other is List<int>) {
+      return List<int>.generate(
+          length, (i) => this[i].toInt() + other[i].toInt());
+    }
+    if (this is List<double> || other is List<double>) {
+      return List<double>.generate(
+        length,
+        (i) => this[i].toDouble() + other[i].toDouble(),
+      );
+    }
     return List<num>.generate(length, (i) => this[i] + other[i]);
   }
 
   /// Returns a new list with elements raised to the power of `scalar`.
   List<num> pow(num scalar) {
+    if (this is List<int> && scalar is int && scalar >= 0) {
+      return List<int>.generate(
+        length,
+        (i) => math.pow(this[i], scalar) as int,
+      );
+    } else if (this is List<double> || scalar is double) {
+      return List<double>.generate(
+        length,
+        (i) => math.pow(this[i], scalar) as double,
+      );
+    }
     return List<num>.generate(length, (i) => math.pow(this[i], scalar));
   }
 
@@ -22,15 +43,27 @@ extension NumOperators on List<num> {
   /// and `other`.
   List<num> operator -(List<num> other) {
     assertSameLength(other, operatorSymbol: '-');
+    if (this is List<int> && other is List<int>) {
+      return List<int>.generate(
+          length, (i) => this[i].toInt() - other[i].toInt());
+    }
+    if (this is List<double> || other is List<double>) {
+      return List<double>.generate(
+        length,
+        (i) => this[i].toDouble() - other[i].toDouble(),
+      );
+    }
     return List<num>.generate(length, (i) => this[i] - other[i]);
   }
 
   /// Returns the scalar product of `this` and `other`.
   ///
-  /// The elements of `this` and `other` are multiplied
+  /// * The elements of `this` and `other` are multiplied
   /// component-wise and summed.
-  ///
-  /// Info: (Non-zero) numerical vectors with the
+  /// * Returns an `int` if both lists are of type `List<int>`,
+  /// otherwise returns a `double`.
+  /// ---
+  /// Info: Non-zero numerical vectors with the
   /// property: `this * other == 0` are called orthogonal.
   num innerProduct(List<num> other) {
     assertSameLength(other, operatorSymbol: 'innerProduct()');
@@ -44,18 +77,32 @@ extension NumOperators on List<num> {
   /// Returns a new list containing the elements of this
   /// multiplied with `scalar`.
   List<num> operator *(num scalar) {
+    if (this is List<int> && scalar is int) {
+      return List<int>.generate(
+          length, (i) => this[i].toInt() * scalar.toInt());
+    } else if (this is List<double> || scalar is double) {
+      return List<double>.generate(
+          length, (i) => this[i].toDouble() * scalar.toDouble());
+    }
     return List<num>.generate(length, (i) => this[i] * scalar);
   }
 
   /// Returns a new list containing the elements of `this` divided by `scalar`.
-  List<num> operator /(num scalar) {
-    return List<num>.generate(length, (i) => this[i] / scalar);
-  }
+  List<double> operator /(num scalar) => List<double>.generate(
+        length,
+        (i) => this[i] / scalar,
+      );
 
   /// Unary operator: Returns a new list
   /// containing the elements of `this` multiplied by -1.
   List<num> operator -() {
-    return List<num>.generate(length, (i) => -this[i]);
+    if (this is List<int>) {
+      return List<int>.generate(length, (i) => -this[i].toInt());
+    } else if (this is List<double>) {
+      return List<double>.generate(length, (i) => -this[i].toDouble());
+    } else {
+      return List<num>.generate(length, (i) => -this[i]);
+    }
   }
 
   /// Returns a new list consisting of the elements of of `this`
@@ -67,7 +114,13 @@ extension NumOperators on List<num> {
   /// Returns a new list consisting of the absolute value of
   /// the elements of `this`.
   List<num> abs() {
-    return List<num>.generate(length, (i) => this[i].abs());
+    if (this is List<int>) {
+      return List<int>.generate(length, (i) => this[i].toInt().abs());
+    } else if (this is List<double>) {
+      return List<double>.generate(length, (i) => this[i].toDouble().abs());
+    } else {
+      return List<num>.generate(length, (i) => this[i].abs());
+    }
   }
 
   /// Returns the minimum value.
