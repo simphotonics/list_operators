@@ -5,12 +5,11 @@ import 'package:matcher/src/feature_matcher.dart';
 import '../extensions/num_operators.dart';
 
 /// Returns a matcher which matches if the match argument `actual`
-/// is in the range
-/// `expected - delta`, `expected.plus(delta)`.
+/// is in the range: `expected - delta`, `expected.plus(delta)`.
 ///
 /// Note: All arguments are of type `Iterable<num>` and must have the
 /// same length in order to match.
-/// ---
+///
 /// Usage:
 /// ```
 /// final actual = [9.5, 5, 2];

@@ -62,7 +62,7 @@ extension NumOperators on List<num> {
   /// component-wise and summed.
   /// * Returns an `int` if both lists are of type `List<int>`,
   /// otherwise returns a `double`.
-  /// ---
+  ///
   /// Info: Non-zero numerical vectors with the
   /// property: `this * other == 0` are called orthogonal.
   num innerProduct(List<num> other) {
