@@ -4,18 +4,6 @@ import 'assertions.dart';
 
 /// Provides operators and methods for object of type List<double>.
 extension DoubleOperators on List<double> {
-  /// Returns a new list with elements: `this[i] - other[i]`.
-  List<double> operator -(List<num> other) {
-    assertSameLength(other, operatorSymbol: '-');
-    return List<double>.generate(length, (i) => this[i] - other[i]);
-  }
-
-  /// Returns a new list with elements: `this[i] + other[i]`.
-  List<double> plus(List<num> other) {
-    assertSameLength(other, operatorSymbol: '+');
-    return List<double>.generate(length, (i) => this[i] + other[i]);
-  }
-
   /// Returns the minimum value.
   /// * The list must have at least one element.
   double min() {

@@ -4,18 +4,6 @@ import 'assertions.dart';
 
 /// Provides additional operators and methods for objects of type List<int>.
 extension IntOperators on List<int> {
-  /// Returns a new list with elements: `this[i] - other[i]`.
-  List<int> operator -(List<int> other) {
-    assertSameLength(other, operatorSymbol: '-');
-    return List<int>.generate(length, (i) => this[i] - other[i]);
-  }
-
-  /// Returns a new list with elements: `this[i] + other[i]`.
-  List<int> plus(List<int> other) {
-    assertSameLength(other, operatorSymbol: '+');
-    return List<int>.generate(length, (i) => this[i] + other[i]);
-  }
-
   /// Returns the minimum value.
   /// * The list must have at least one element.
   int min() {
