@@ -1,5 +1,5 @@
 # List Operators
-[![Build Status](https://travis-ci.com/simphotonics/list_operators.svg?branch=main)](https://travis-ci.com/simphotonics/list_operators)
+[![Dart](https://github.com/simphotonics/list_operators/actions/workflows/dart.yml/badge.svg)](https://github.com/simphotonics/list_operators/actions/workflows/dart.yml)
 
 ## Introduction
 The package [`list_operators`][list_operators] uses Dart extensions to provide additional operators for objects of type `List<num>` and `List<T extends Comparable>`.

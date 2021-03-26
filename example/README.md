@@ -1,5 +1,5 @@
 # List Operators - Example
-[![Build Status](https://travis-ci.com/simphotonics/list_operators.svg?branch=main)](https://travis-ci.com/simphotonics/list_operators)
+[![Dart](https://github.com/simphotonics/list_operators/actions/workflows/dart.yml/badge.svg)](https://github.com/simphotonics/list_operators/actions/workflows/dart.yml)
 
 To run the program shown below navigate to the
 root folder of your local copy of [list_operators] and
