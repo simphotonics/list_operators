@@ -1,3 +1,7 @@
+## 0.2.2
+
+Migrated CI to github.
+
 ## 0.2.1
 
 - Added custom matcher `orderedCloseTo` for matching numerical list
