@@ -8,8 +8,8 @@ The package [`list_operators`][list_operators] uses Dart extensions to provide a
 To use this package include [`list_operatos`][list_operators] as a `dependency` in your `pubspec.yaml` file.
 The program below demonstrates how to use some of the operators and methods defined by the library `list_operators`.
 
-Note: The `+` operator (concatenates two lists) is already defined by Dart's abstract class `List` and
-cannot be overridden by an extension on `List`.
+Note: The `+` operator (concatenates two lists) is already defined by Dart's abstract class [`List`][List] and
+cannot be overridden by an extension on [`List`][List].
 To add two numerical lists element by element use the method: `List<num> plus(List<num> other)`.
 
 
@@ -207,3 +207,5 @@ Please file feature requests and bugs at the [issue tracker][tracker].
 [tracker]: https://github.com/simphotonics/list_operators/issues
 
 [list_operators]: https://pub.dev/packages/list_operators
+
+[List]: https://api.dart.dev/stable/dart-core/List-class.html
