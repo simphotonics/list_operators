@@ -3,6 +3,7 @@
 library list_operators;
 
 export 'src/exceptions/incompatible_lists.dart';
+export 'src/extensions/assertions.dart';
 export 'src/extensions/comparison.dart';
 export 'src/extensions/euclidean_metric.dart';
 export 'src/extensions/export.dart';
