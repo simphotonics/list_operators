@@ -1,3 +1,7 @@
+## 0.2.3
+
+Library `list_operators` now exports `assertions.dart`.
+
 ## 0.2.2
 
 Migrated CI to github.
