@@ -4,6 +4,8 @@ import '../exceptions/incompatible_lists.dart';
 
 extension Assertions<T> on List<T> {
   /// Asserts that `this` and `other` have the same length.
+  /// The parameter `operatorSymbol` is mentioned in the error
+  /// message.
   void assertSameLength(List other, {String operatorSymbol = ''}) {
     if (length != other.length) {
       throw ErrorOfType<IncompatibleLists>(
