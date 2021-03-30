@@ -1,6 +1,6 @@
 import 'package:exception_templates/exception_templates.dart';
 
-import '../exceptions/incompatible_lists.dart';
+import '../exceptions/list_length_mismatch.dart';
 
 extension Assertions<T> on List<T> {
   /// Asserts that `this` and `other` have the same length.
@@ -8,7 +8,7 @@ extension Assertions<T> on List<T> {
   /// message.
   void assertSameLength(List other, {String operatorSymbol = ''}) {
     if (length != other.length) {
-      throw ErrorOfType<IncompatibleLists>(
+      throw ErrorOfType<ListLengthMismatch>(
           message: 'Error using \'$operatorSymbol\' with $runtimeType.',
           invalidState: 'Length of $this does not match length of $other.',
           expectedState: 'Two lists with the same length.');

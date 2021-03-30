@@ -38,10 +38,10 @@ void main() {
     });
   });
   group('Exceptions', () {
-    test('IncompatibleLists', () {
+    test('ListLengthMismatch', () {
       try {
         [0, 1].distance([1, 3, 4]);
-      } on ErrorOfType<IncompatibleLists> catch (e) {
+      } on ErrorOfType<ListLengthMismatch> catch (e) {
         expect(e.message,
             'Can\'t calculate distance between [0, 1] and [1, 3, 4].');
       }

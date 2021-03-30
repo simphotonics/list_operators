@@ -72,10 +72,10 @@ void main() {
   });
 
   group('Exceptions', () {
-    test('IncompatibleLists', () {
+    test('ListLengthMismatch', () {
       try {
         [0, 1] - [1, 3, 4];
-      } on ErrorOfType<IncompatibleLists> catch (e) {
+      } on ErrorOfType<ListLengthMismatch> catch (e) {
         expect(e.message, 'Error using \'-\' with List<int>.');
       }
     });
