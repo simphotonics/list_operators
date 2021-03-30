@@ -198,7 +198,7 @@ expects a second operand of type `num`.
 
 ## Examples
 
-The program shown above is included in the folder [`example`](example).
+The program shown above is included in the folder [`example`][example].
 
 ## Features and bugs
 
@@ -209,3 +209,5 @@ Please file feature requests and bugs at the [issue tracker][tracker].
 [list_operators]: https://pub.dev/packages/list_operators
 
 [List]: https://api.dart.dev/stable/dart-core/List-class.html
+
+[example]: https://github.com/simphotonics/list_operators/tree/main/example
