@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:exception_templates/exception_templates.dart';
 import 'package:test/test.dart';
 
@@ -178,6 +180,26 @@ void main() {
     });
     test('List<double> type', () {
       expect(d1.pow(2).runtimeType, listOfDoubleType);
+    });
+  });
+  group('exp()', () {
+    test('List<num> value', () {
+      expect(n1.exp(), [exp(n1[0]), exp(n1[1]), exp(n1[2])]);
+    });
+    test('List<int> value', () {
+      expect(i1.exp(2), [exp(i1[0]*2), exp(i1[1]*2), exp(i1[2]*2)]);
+    });
+    test('List<double> value', () {
+      expect(d1.exp(2), [exp(d1[0]*2), exp(d1[1]*2), exp(d1[2]*2)]);
+    });
+    test('List<num> type', () {
+      expect(n1.exp(2).runtimeType, listOfDoubleType);
+    });
+    test('List<int> type', () {
+      expect(i1.exp(2).runtimeType, listOfDoubleType);
+    });
+    test('List<double> type', () {
+      expect(d1.exp(2).runtimeType, listOfDoubleType);
     });
   });
   group('Methods:', () {

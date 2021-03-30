@@ -39,6 +39,10 @@ void main() {
   print('\nPower');
   print(a.pow(2));
 
+  print('\nExponentiation');
+  print(a.exp());
+  print(a.exp(2));
+
   print('\nb.distanceFromOrigin()');
   print(b.distanceFromOrigin);
 

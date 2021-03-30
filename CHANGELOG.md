@@ -1,3 +1,7 @@
+## 0.2.4
+
+Added method `exp()` to extension `NumOperators`.
+
 ## 0.2.3
 
 Library `list_operators` now exports `assertions.dart`.
