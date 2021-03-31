@@ -1,3 +1,7 @@
+## 0.2.6
+
+Made method `sum()` available to `Iterable<T extends num>`.
+
 ## 0.2.5
 
 Added method `sum()`.

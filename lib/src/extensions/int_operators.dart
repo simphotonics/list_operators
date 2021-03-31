@@ -24,14 +24,6 @@ extension IntOperators on List<int> {
     return List<int>.generate(length, (i) => this[i].abs());
   }
 
-  /// Returns the sum of the entries.
-  ///
-  /// The iterable must not be empty.
-  int sum() {
-    assertHasElements();
-    return fold<int>(0, (sum, current) => sum + current);
-  }
-
   /// Returns a new list containing the elements of `this`
   /// multiplied by `scalar`.
   List<int> operator *(int scalar) {
@@ -41,5 +33,15 @@ extension IntOperators on List<int> {
   /// Returns a new list containing the elements of `this` converted to `double`.
   List<double> toDouble() {
     return List<double>.generate(length, (i) => this[i].toDouble());
+  }
+}
+
+extension IntIterableOperators on Iterable<int> {
+  /// Returns the sum of the entries.
+  ///
+  /// The iterable must not be empty.
+  int sum() {
+    assertHasElements();
+    return fold<int>(0, (sum, current) => sum + current);
   }
 }

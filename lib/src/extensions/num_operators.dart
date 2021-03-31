@@ -214,3 +214,13 @@ extension NumOperators on List<num> {
     return List<double>.generate(length, (i) => this[i].toDouble());
   }
 }
+
+extension NumIterableOperators on Iterable<num> {
+  /// Returns the sum of the entries.
+  ///
+  /// The iterable must not be empty.
+  num sum() {
+    assertHasElements();
+    return fold<num>(0, (sum, current) => sum + current);
+  }
+}
