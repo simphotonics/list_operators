@@ -1,3 +1,7 @@
+## 0.2.5
+
+Added method `sum()`.
+
 ## 0.2.4
 
 Added method `exp()` to extension `NumOperators`.
