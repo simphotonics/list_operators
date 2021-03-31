@@ -36,7 +36,7 @@ extension DoubleOperators on List<double> {
   }
 }
 
-extension DoubleIterableOperators on Iterable<double>{
+extension DoubleIterableOperators on Iterable<double> {
   /// Returns the sum of the entries.
   ///
   /// The iterable must not be empty.
