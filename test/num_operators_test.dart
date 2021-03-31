@@ -187,10 +187,10 @@ void main() {
       expect(n1.exp(), [exp(n1[0]), exp(n1[1]), exp(n1[2])]);
     });
     test('List<int> value', () {
-      expect(i1.exp(2), [exp(i1[0]*2), exp(i1[1]*2), exp(i1[2]*2)]);
+      expect(i1.exp(2), [exp(i1[0] * 2), exp(i1[1] * 2), exp(i1[2] * 2)]);
     });
     test('List<double> value', () {
-      expect(d1.exp(2), [exp(d1[0]*2), exp(d1[1]*2), exp(d1[2]*2)]);
+      expect(d1.exp(2), [exp(d1[0] * 2), exp(d1[1] * 2), exp(d1[2] * 2)]);
     });
     test('List<num> type', () {
       expect(n1.exp(2).runtimeType, listOfDoubleType);
@@ -202,7 +202,7 @@ void main() {
       expect(d1.exp(2).runtimeType, listOfDoubleType);
     });
   });
-  group('Methods:', () {
+  group('Getters:', () {
     test('min()', () {
       expect([0.7, -0.3, 1, 55].min(), -0.3);
       expect([1, 1, 2, 2].min(), 1);
@@ -217,6 +217,9 @@ void main() {
     test('stdDev()', () {
       expect([1, 2, 3].stdDev(), 1.0);
       expect([-1, 0, 1].stdDev(), 1.0);
+    });
+    test('sum', () {
+      expect([1, 2, 3].sum(), 6);
     });
   });
   group('Comparisons:', () {

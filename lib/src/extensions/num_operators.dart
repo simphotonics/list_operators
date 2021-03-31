@@ -41,10 +41,7 @@ extension NumOperators on List<num> {
 
   /// Returns a new list with elements multiplied by `scalar` and exponentiated.
   List<num> exp([num scalar = 1.0]) {
-    return List<double>.generate(
-      length,
-      (i) => math.exp(this[i]*scalar)
-    );
+    return List<double>.generate(length, (i) => math.exp(this[i] * scalar));
   }
 
   /// Returns a new list consisting of the difference of the elements of `this`
