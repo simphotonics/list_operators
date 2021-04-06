@@ -202,7 +202,7 @@ void main() {
       expect(d1.exp(2).runtimeType, listOfDoubleType);
     });
   });
-  group('Getters:', () {
+  group('Methods:', () {
     test('min()', () {
       expect([0.7, -0.3, 1, 55].min(), -0.3);
       expect([1, 1, 2, 2].min(), 1);
@@ -218,8 +218,13 @@ void main() {
       expect([1, 2, 3].stdDev(), 1.0);
       expect([-1, 0, 1].stdDev(), 1.0);
     });
-    test('sum', () {
+    test('sum()', () {
       expect([1, 2, 3].sum(), 6);
+    });
+    test('prod()', () {
+      expect([1, 2, 3, 4].prod(), 24);
+      expect(<num>[1, 2, 3, 4].prod().runtimeType, int);
+      expect(<num>[1, 2, 3, 4.0].prod().runtimeType, double);
     });
   });
   group('Comparisons:', () {

@@ -48,12 +48,15 @@ void main() {
     test('pow()', () {
       expect(i1.pow(2), [1, 4, 9]);
     });
-    test('min', () {
+    test('min()', () {
       expect([0.7, -0.3, 1, 55].min(), -0.3);
       expect([1, 1, 2, 2].min(), 1);
     });
-    test('max', () {
+    test('max()', () {
       expect([7, 8, -9].max(), 8);
+    });
+    test('prod()', () {
+      expect([1, 2, 3, 4].prod().runtimeType, int);
     });
   });
   group('Comparisons:', () {
