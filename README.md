@@ -11,8 +11,6 @@ The program below demonstrates how to use some of the operators and methods defi
 Note: The `+` operator (concatenates two lists) is already defined by Dart's abstract class [`List`][List] and
 cannot be overridden by an extension on [`List`][List].
 To add two numerical lists element by element use the method: `List<num> plus(List<num> other)`.
-
-
 ```Dart
 import 'package:list_operators/list_operators.dart';
 
@@ -23,84 +21,45 @@ void main() {
   /// Use with List<num>
   print('Absolute value:');
   print((a - b).abs());
+  print('');
 
-  print('\nAddition:');
+  print('Addition:');
   print(a.plus(b));
+  print('');
 
-  print('\nSubtraction:');
+  print('Subtraction:');
   print(b - a);
+  print('');
 
-  print('\nInner product:');
+  print('Inner product:');
   print(a.innerProduct(b));
+  print('');
 
-  print('\nMultiplication with scalar:');
+  print('Multiplication with a number:');
   print(a * 10);
+  print('');
 
-  print('\nProduct of all entries:');
-  print(a.prod());
-
-  print('\nPower');
+  print('Power');
   print(a.pow(2));
+  print('');
 
-  print('\nExponentiation');
+  print('Exponentiation');
   print(a.exp());
   print(a.exp(2));
+  print('');
 
-  print('\nb.distanceFromOrigin()');
+  print('b.distanceFromOrigin()');
   print(b.distanceFromOrigin);
+  print('');
 
-  print('\nb.distance(a)');
+  print('b.distance(a)');
   print(b.distance(a));
+  print('');
 
-
-  /// Use with List<T extends Comparable>
-  print('\na < b:');
-  print(a < b);
-
-  print('\na <= b:');
-  print(a <= b);
-
-  print('\na > b:');
-  print(a > b);
-
-  print('\nb >= b:');
-  print(b >= b);
-
-  final s1 = ['a1', 'a2'];
-  final s2 = ['b1', 'b2'];
-
-  print('\ns1 <= s2');
-  print(s1 < s2);
-
-  /// Provided by Dart
-  print('\nConcatenation:');
+  /// Dart built-in operator:
+  print('Concatenation:');
   print(a + b);
-
-  /// Exporting numerical lists to a `String` object.
-  print('\nExporting lists to String:');
-  print(a.export(
-    label: 'Sample label',
-    delimiter: ', ',
-    precision: 4,
-  ));
-
-  print('\nExporting an object of type List<List<num>> to String:');
-  print('Each inner list is exported as a row.');
-  print([
-    [1, 2, 3],
-    [101, 102, 103]
-  ].export(label: 'Sample label', precision: 6));
-
-  print('\nExporting an object of type List<List<num>> to String.');
-  print('Inner lists are exported as columns.');
-  print([
-    [1, 2, 3],
-    [101, 102, 103]
-  ].export(
-    label: 'Sample label',
-    precision: 6,
-    flip: true,
-  ));
+  print('');
 
   // Creating an unmodifiable list view (recursively)
   print('\nCreating an unmodifiable list of an object of type List<List<T>>:');
@@ -115,13 +74,11 @@ void main() {
   // Prints: UnmodifiableListView<UnmodifiableListView<String>>
   print(listView.runtimeType);
 }
-
 ```
 <details><summary> Click to show console output.</summary>
 
 ```Console
-
-dan@nano:~/list_operators$ dart example/bin/example.dart
+$ dart numerical_list_example.dart
 Absolute value:
 [10, 10, 10]
 
@@ -131,17 +88,18 @@ Addition:
 Subtraction:
 [10, 10, 10]
 
-Scalar product:
+Inner product:
 74
 
-Multiplication with a scalar:
+Multiplication with a number:
 [10, 20, 30]
-
-Product of all entries:
-6
 
 Power
 [1, 4, 9]
+
+Exponentiation
+[2.718281828459045, 7.38905609893065, 20.085536923187668]
+[7.38905609893065, 54.598150033144236, 403.4287934927351]
 
 b.distanceFromOrigin()
 20.83266665599966
@@ -149,6 +107,111 @@ b.distanceFromOrigin()
 b.distance(a)
 17.320508075688775
 
+Concatenation:
+[1, 2, 3, 11, 12, 13]
+
+Creating an unmodifiable list of an object of type List<List<T>>:
+UnmodifiableListView<UnmodifiableListView<String>>
+```
+
+</details>
+
+
+```Dart
+import 'package:list_operators/list_operators.dart';
+
+void main() {
+  final b = [11, 12, 13];
+
+  // Operators and method that work with Iterable<num>
+  print('Minimum: b.min()');
+  print(b.min());
+  print('');
+
+  print('Maximum: b.max()');
+  print(b.max());
+  print('');
+
+  print('Mean: b.mean()');
+  print(b.mean());
+  print('');
+
+  print('Product of all entries: b.prod()');
+  print(b.prod());
+  print('');
+
+  print('Standard deviation: b.stdDev()');
+  print(b.stdDev());
+  print('');
+
+  print('Sum: b.sum()');
+  print(b.sum());
+}
+
+
+```
+<details><summary> Click to show console output.</summary>
+
+```Console
+$ dart numerical_iterable_example.dart
+Minimum: b.min()
+11
+
+Maximum: b.max()
+13
+
+Mean: b.mean()
+12.0
+
+Product of all entries: b.prod()
+1716
+
+Standard deviation: b.stdDev()
+1.0
+
+Sum: b.sum()
+36
+
+```
+
+</details>
+
+
+```Dart
+import 'package:list_operators/list_operators.dart';
+
+void main() {
+  final a = [1, 2, 3];
+  final b = [11, 12, 13];
+
+  // Operators that work with List<T extends Comparable>
+  print('a < b:');
+  print(a < b);
+  print('');
+
+  print('a <= b:');
+  print(a <= b);
+  print('');
+
+  print('a > b:');
+  print(a > b);
+  print('');
+
+  print('b >= b:');
+  print(b >= b);
+  print('');
+
+  final s1 = ['a1', 'a2'];
+  final s2 = ['b1', 'b2'];
+
+  print('s1 <= s2');
+  print(s1 < s2);
+}
+```
+<details><summary> Click to show console output.</summary>
+
+```Console
+$ dart comparable_list_example.dart
 a < b:
 true
 
@@ -163,37 +226,65 @@ true
 
 s1 <= s2
 true
+```
 
-Concatenation:
-[1, 2, 3, 11, 12, 13]
+</details>
 
+```Dart
+import 'package:list_operators/list_operators.dart';
+void main() {
+  final a = [1, 2, 3];
+
+  /// Exporting numerical lists to a `String` object.
+  print('Exporting lists to String:');
+  print(a.export(
+    label: '<<Sample label>>',
+    delimiter: ', ',
+    precision: 4,
+  ));
+
+  print('Exporting an object of type List<List<num>> to String:');
+  print('Each inner list is exported as a row.');
+  print([
+    [1, 2, 3],
+    [101, 102, 103]
+  ].export(label: '<<Sample label>>', precision: 6));
+
+  print('Exporting an object of type List<List<num>> to String.');
+  print('Inner lists are exported as columns.');
+  print([
+    [1, 2, 3],
+    [101, 102, 103]
+  ].export(
+    label: '<<Sample label>>',
+    precision: 6,
+    flip: true,
+  ));
+}
+```
+<details><summary> Click to show console output.</summary>
+
+```Console
+$ dart export_to_string_example.dart
 Exporting lists to String:
-Sample label
+<<Sample label>>
 1.000,
 2.000,
 3.000,
 
-
 Exporting an object of type List<List<num>> to String:
 Each inner list is exported as a row.
-Sample label
+<<Sample label>>
 1.00000 2.00000 3.00000
 101.000 102.000 103.000
 
-
 Exporting an object of type List<List<num>> to String.
 Inner lists are exported as columns.
-Sample label
+<<Sample label>>
 1.00000 101.000
 2.00000 102.000
 3.00000 103.000
-
-
-Creating an unmodifiable list view of an object of type List<List<T>>:
-[[one], [two]]   runtimeType: UnmodifiableListView<UnmodifiableListView<String>>
-
 ```
-
 </details>
 
 
