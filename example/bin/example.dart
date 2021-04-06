@@ -20,6 +20,9 @@ void main() {
   print('\nMultiplication:');
   print(a * 10);
 
+  print('\nProduct of all entries:');
+  print(a.prod());
+
   print('\nPower');
   print(a.pow(2));
 

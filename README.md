@@ -33,8 +33,11 @@ void main() {
   print('\nInner product:');
   print(a.innerProduct(b));
 
-  print('\nMultiplication:');
+  print('\nMultiplication with scalar:');
   print(a * 10);
+
+  print('\nProduct of all entries:');
+  print(a.prod());
 
   print('\nPower');
   print(a.pow(2));
@@ -131,8 +134,11 @@ Subtraction:
 Scalar product:
 74
 
-Multiplication:
+Multiplication with a scalar:
 [10, 20, 30]
+
+Product of all entries:
+6
 
 Power
 [1, 4, 9]
