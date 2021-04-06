@@ -11,6 +11,8 @@ The program below demonstrates how to use some of the operators and methods defi
 Note: The `+` operator (concatenates two lists) is already defined by Dart's abstract class [`List`][List] and
 cannot be overridden by an extension on [`List`][List].
 To add two numerical lists element by element use the method: `List<num> plus(List<num> other)`.
+
+### Methods and Operators For Objects of Type List<num>
 ```Dart
 import 'package:list_operators/list_operators.dart';
 
@@ -116,6 +118,7 @@ UnmodifiableListView<UnmodifiableListView<String>>
 
 </details>
 
+### Methods For Objects of Type Iterable<num>
 
 ```Dart
 import 'package:list_operators/list_operators.dart';
@@ -176,6 +179,7 @@ Sum: b.sum()
 
 </details>
 
+### Operators For Objects of Type List<T extends Comparable>
 
 ```Dart
 import 'package:list_operators/list_operators.dart';
@@ -229,6 +233,8 @@ true
 ```
 
 </details>
+
+### Methods for Exporting Numerical Lists as a String
 
 ```Dart
 import 'package:list_operators/list_operators.dart';
