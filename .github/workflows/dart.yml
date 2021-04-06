@@ -10,10 +10,13 @@ on:
     branches: [ main ]
     paths:
     - '**.dart'
+
   pull_request:
     branches: [ main ]
     paths:
     - '**.dart'
+
+  workflow_dispatch:
 
 jobs:
   build:
@@ -44,5 +47,8 @@ jobs:
       - name: Run tests
         run: dart test
 
-      - name: Run example
-        run: dart example/bin/example.dart
+      - name: Run example comparable lists
+        run: dart example/bin/comparable_list_example.dart
+
+      - name: Run example numerical iterable
+        run: dart example/bin/numerical_list_example.dart

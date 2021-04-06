@@ -51,4 +51,5 @@ pub run test -r expanded --test-randomize-ordering-seed=random
 echo
 echo -e "${BLUE}=== Running Example $PWD/example ${RESET}"
 echo
-dart example/bin/example.dart
+dart example/bin/comparable_list_example.dart
+dart example/bin/numerical_list_example.dart
