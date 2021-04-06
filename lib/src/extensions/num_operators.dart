@@ -212,7 +212,7 @@ extension NumIterableOperators on Iterable<num> {
     assertHasElements();
     return fold<num>(1, (prod, current) => prod * current);
   }
-  
+
   /// Returns the corrected standard deviation of the list elements.
   /// * The list must have at least two elements.
   num stdDev() {
@@ -231,5 +231,4 @@ extension NumIterableOperators on Iterable<num> {
     assertHasElements();
     return fold<num>(0, (sum, current) => sum + current);
   }
-
 }
