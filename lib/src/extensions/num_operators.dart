@@ -223,4 +223,12 @@ extension NumIterableOperators on Iterable<num> {
     assertHasElements();
     return fold<num>(0, (sum, current) => sum + current);
   }
+
+  /// Returns the product of the entries.
+  ///
+  /// The iterable must not be empty.
+  num prod() {
+    assertHasElements();
+    return fold<num>(1, (prod, current) => prod * current);
+  }
 }

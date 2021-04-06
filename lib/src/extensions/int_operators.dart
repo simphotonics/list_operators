@@ -44,4 +44,12 @@ extension IntIterableOperators on Iterable<int> {
     assertHasElements();
     return fold<int>(0, (sum, current) => sum + current);
   }
+
+  /// Returns the product of the entries.
+  ///
+  /// The iterable must not be empty.
+  int prod() {
+    assertHasElements();
+    return fold<int>(1, (prod, current) => prod * current);
+  }
 }

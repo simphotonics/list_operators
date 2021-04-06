@@ -44,4 +44,12 @@ extension DoubleIterableOperators on Iterable<double> {
     assertHasElements();
     return fold<num>(0.0, (sum, current) => sum + current);
   }
+
+  /// Returns the product of the entries.
+  ///
+  /// The iterable must not be empty.
+  double prod() {
+    assertHasElements();
+    return fold<double>(1.0, (prod, current) => prod * current);
+  }
 }
