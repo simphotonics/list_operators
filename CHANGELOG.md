@@ -1,3 +1,7 @@
+## 0.2.7
+
+Added method `prod()` returning the product of all entries.
+
 ## 0.2.6
 
 Made method `sum()` available to `Iterable<T extends num>`.
