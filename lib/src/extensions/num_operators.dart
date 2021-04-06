@@ -128,38 +128,6 @@ extension NumOperators on List<num> {
     }
   }
 
-  /// Returns the minimum value.
-  /// * The list must have at least one element.
-  num min() {
-    assertHasElements();
-    return reduce((value, element) => math.min<num>(value, element));
-  }
-
-  /// Returns the maximum value.
-  /// * The list must have at least one element.
-  num max() {
-    assertHasElements();
-    return reduce((value, element) => math.max<num>(value, element));
-  }
-
-  /// Returns the mean of the list elements.
-  /// * The list must have at least one element.
-  num mean() {
-    assertHasElements(n: 1);
-    return fold<num>(0.0, (sum, element) => sum + element) / length;
-  }
-
-  /// Returns the corrected standard deviation of the list elements.
-  /// * The list must have at least two elements.
-  num stdDev() {
-    assertHasElements(n: 2);
-    final _mean = mean();
-    return math.sqrt(
-      fold<num>(0, (sum, element) => sum + math.pow(_mean - element, 2)) /
-          (length - 1),
-    );
-  }
-
   /// Returns true if the inequality `<` holds for each component.
   bool operator <(List<num> other) {
     assertSameLength(other, operatorSymbol: '<');
@@ -216,12 +184,25 @@ extension NumOperators on List<num> {
 }
 
 extension NumIterableOperators on Iterable<num> {
-  /// Returns the sum of the entries.
-  ///
-  /// The iterable must not be empty.
-  num sum() {
+  /// Returns the minimum value.
+  /// * The list must have at least one element.
+  num min() {
     assertHasElements();
-    return fold<num>(0, (sum, current) => sum + current);
+    return reduce((value, element) => math.min<num>(value, element));
+  }
+
+  /// Returns the maximum value.
+  /// * The list must have at least one element.
+  num max() {
+    assertHasElements();
+    return reduce((value, element) => math.max<num>(value, element));
+  }
+
+  /// Returns the mean of the list elements.
+  /// * The list must have at least one element.
+  num mean() {
+    assertHasElements(n: 1);
+    return fold<num>(0.0, (sum, element) => sum + element) / length;
   }
 
   /// Returns the product of the entries.
@@ -231,4 +212,24 @@ extension NumIterableOperators on Iterable<num> {
     assertHasElements();
     return fold<num>(1, (prod, current) => prod * current);
   }
+  
+  /// Returns the corrected standard deviation of the list elements.
+  /// * The list must have at least two elements.
+  num stdDev() {
+    assertHasElements(n: 2);
+    final _mean = mean();
+    return math.sqrt(
+      fold<num>(0, (sum, element) => sum + math.pow(_mean - element, 2)) /
+          (length - 1),
+    );
+  }
+
+  /// Returns the sum of the entries.
+  ///
+  /// The iterable must not be empty.
+  num sum() {
+    assertHasElements();
+    return fold<num>(0, (sum, current) => sum + current);
+  }
+
 }

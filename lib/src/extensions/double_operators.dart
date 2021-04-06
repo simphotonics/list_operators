@@ -4,20 +4,6 @@ import 'assertions.dart';
 
 /// Provides operators and methods for object of type List<double>.
 extension DoubleOperators on List<double> {
-  /// Returns the minimum value.
-  /// * The list must have at least one element.
-  double min() {
-    assertHasElements();
-    return reduce((value, element) => math.min(value, element));
-  }
-
-  /// Returns the maximum value.
-  /// * The list must have at least one element.
-  double max() {
-    assertHasElements();
-    return reduce((value, element) => math.max(value, element));
-  }
-
   /// Returns a new list consisting of the absolute value of
   /// the elements of `this`.
   List<double> abs() {
@@ -43,6 +29,20 @@ extension DoubleIterableOperators on Iterable<double> {
   num sum() {
     assertHasElements();
     return fold<num>(0.0, (sum, current) => sum + current);
+  }
+
+  /// Returns the minimum value.
+  /// * The list must have at least one element.
+  double min() {
+    assertHasElements();
+    return reduce((value, element) => math.min(value, element));
+  }
+
+  /// Returns the maximum value.
+  /// * The list must have at least one element.
+  double max() {
+    assertHasElements();
+    return reduce((value, element) => math.max(value, element));
   }
 
   /// Returns the product of the entries.

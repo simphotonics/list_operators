@@ -4,20 +4,6 @@ import 'assertions.dart';
 
 /// Provides additional operators and methods for objects of type List<int>.
 extension IntOperators on List<int> {
-  /// Returns the minimum value.
-  /// * The list must have at least one element.
-  int min() {
-    assertHasElements();
-    return reduce((value, element) => math.min(value, element));
-  }
-
-  /// Returns the maximum value.
-  /// * The list must have at least one element.
-  int max() {
-    assertHasElements();
-    return reduce((value, element) => math.max(value, element));
-  }
-
   /// Returns a new list consisting of the absolute value of
   /// the elements of `this`.
   List<int> abs() {
@@ -37,6 +23,20 @@ extension IntOperators on List<int> {
 }
 
 extension IntIterableOperators on Iterable<int> {
+  /// Returns the minimum value.
+  /// * The list must have at least one element.
+  int min() {
+    assertHasElements();
+    return reduce((value, element) => math.min(value, element));
+  }
+
+  /// Returns the maximum value.
+  /// * The list must have at least one element.
+  int max() {
+    assertHasElements();
+    return reduce((value, element) => math.max(value, element));
+  }
+
   /// Returns the sum of the entries.
   ///
   /// The iterable must not be empty.
