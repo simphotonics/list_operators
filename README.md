@@ -6,13 +6,9 @@ The package [`list_operators`][list_operators] uses Dart extensions to provide a
 
 ## Usage
 To use this package include [`list_operatos`][list_operators] as a `dependency` in your `pubspec.yaml` file.
-The program below demonstrates how to use some of the operators and methods defined by the library `list_operators`.
+The programs below demonstrates how to use the operators and methods defined by the library `list_operators`.
 
-Note: The `+` operator (concatenates two lists) is already defined by Dart's abstract class [`List`][List] and
-cannot be overridden by an extension on [`List`][List].
-To add two numerical lists element by element use the method: `List<num> plus(List<num> other)`.
-
-### Methods and Operators For Objects of Type List<num>
+### Methods and Operators For Objects of Type List\<num\>
 ```Dart
 import 'package:list_operators/list_operators.dart';
 
@@ -115,10 +111,9 @@ Concatenation:
 Creating an unmodifiable list of an object of type List<List<T>>:
 UnmodifiableListView<UnmodifiableListView<String>>
 ```
+</details><br/>
 
-</details>
-
-### Methods For Objects of Type Iterable<num>
+### Methods For Objects of Type Iterable\<num\>
 
 ```Dart
 import 'package:list_operators/list_operators.dart';
@@ -151,7 +146,6 @@ void main() {
   print(b.sum());
 }
 
-
 ```
 <details><summary> Click to show console output.</summary>
 
@@ -177,9 +171,9 @@ Sum: b.sum()
 
 ```
 
-</details>
+</details><br/>
 
-### Operators For Objects of Type List<T extends Comparable>
+### Operators For Objects of Type List\<T extends Comparable\>
 
 ```Dart
 import 'package:list_operators/list_operators.dart';
@@ -231,8 +225,7 @@ true
 s1 <= s2
 true
 ```
-
-</details>
+</details><br/>
 
 ### Methods for Exporting Numerical Lists as a String
 
@@ -302,6 +295,10 @@ are not symmetrical, even though intuitively they should be:
 - The expression `[1, 2, 3] * 10` is defined and the result is `[10, 20, 30]`.
 - The expression `10 * [1, 2, 3]` is not defined since the `*` operator defined for objects of type `int`
 expects a second operand of type `num`.
+
+Note: The `+` operator (concatenates two lists) is already defined by Dart's abstract class [`List`][List] and
+cannot be overridden by an extension on [`List`][List].
+To add two numerical lists element by element use the method: `List<num> plus(List<num> other)`.
 
 ## Examples
 
