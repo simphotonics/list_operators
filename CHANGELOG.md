@@ -1,3 +1,8 @@
+## 0.2.8
+
+- Amended docs.
+- Made methods `min()`, `max()`, `prod()` available for object of type `Iterable<num>`.
+
 ## 0.2.7
 
 Added method `prod()` returning the product of all entries.
