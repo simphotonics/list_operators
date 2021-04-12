@@ -184,7 +184,7 @@ extension NumOperators on List<num> {
 
   /// Returns `true` if the equality
   /// `this(i) == other(i)` holds for each index `i`.
-  bool match(List<num> other, {double precision: 1e-12}) {
+  bool match(List<num> other, {double precision = 1e-12}) {
     if (this == other) return true;
     if (length != other.length) return false;
     final it = iterator;
