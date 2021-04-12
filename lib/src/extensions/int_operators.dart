@@ -20,6 +20,21 @@ extension IntOperators on List<int> {
   List<double> toDouble() {
     return List<double>.generate(length, (i) => this[i].toDouble());
   }
+
+  /// Returns `true` if the equality
+  /// `this(i) == other(i)` holds for each index `i`.
+  bool match(List<int> other) {
+    if (this == other) return true;
+    if (length != other.length) return false;
+    final it = iterator;
+    final oit = other.iterator;
+    while (it.moveNext() && oit.moveNext()) {
+      if (it.current != oit.current) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
 
 extension IntIterableOperators on Iterable<int> {

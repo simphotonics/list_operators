@@ -240,6 +240,12 @@ void main() {
     test('>=', () {
       expect(n2 >= n1, true);
     });
+    test('match self', () {
+      expect(n1.match(n1 * 1), true);
+    });
+    test('n1 != n2', () {
+      expect(n1.match(n2), false);
+    });
   });
 
   group('Exceptions', () {

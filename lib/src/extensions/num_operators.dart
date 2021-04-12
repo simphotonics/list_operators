@@ -181,6 +181,21 @@ extension NumOperators on List<num> {
   List<double> toDouble() {
     return List<double>.generate(length, (i) => this[i].toDouble());
   }
+
+  /// Returns `true` if the equality
+  /// `this(i) == other(i)` holds for each index `i`.
+  bool match(List<num> other, {double precision: 1e-12}) {
+    if (this == other) return true;
+    if (length != other.length) return false;
+    final it = iterator;
+    final oit = other.iterator;
+    while (it.moveNext() && oit.moveNext()) {
+      if ((it.current - oit.current).abs() > precision) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
 
 extension NumIterableOperators on Iterable<num> {

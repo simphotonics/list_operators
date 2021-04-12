@@ -72,6 +72,12 @@ void main() {
     test('>=', () {
       expect(d2 >= d1, true);
     });
+    test('match self', () {
+      expect(d1.match(d1 * 1), true);
+    });
+    test('d1 != d2', () {
+      expect(d1.match(d2), false);
+    });
   });
 
   group('Exceptions', () {
