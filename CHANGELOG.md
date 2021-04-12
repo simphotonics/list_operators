@@ -1,3 +1,8 @@
+## 0.2.9
+
+Added the list method `match`. Two lists are considered matching if their entries match
+in sequential order.
+
 ## 0.2.8
 
 - Amended docs.
