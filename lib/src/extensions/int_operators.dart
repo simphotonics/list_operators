@@ -35,6 +35,21 @@ extension IntOperators on List<int> {
     }
     return true;
   }
+
+  /// Returns the scalar product of `this` and `other`.
+  ///
+  /// * The elements of `this` and `other` are multiplied
+  /// component-wise and summed.
+  /// Info: Non-zero numerical vectors with the
+  /// property: `this * other == 0` are called orthogonal.
+  int innerProd(List<int> other) {
+    assertSameLength(other, operatorSymbol: 'innerProd()');
+    var sum = 0;
+    for (var i = 0; i < length; i++) {
+      sum += this[i] * other[i];
+    }
+    return sum;
+  }
 }
 
 extension IntIterableOperators on Iterable<int> {

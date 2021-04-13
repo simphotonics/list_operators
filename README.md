@@ -30,7 +30,7 @@ void main() {
   print('');
 
   print('Inner product:');
-  print(a.innerProduct(b));
+  print(a.innerProd(b));
   print('');
 
   print('Multiplication with a number:');

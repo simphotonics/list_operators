@@ -53,22 +53,22 @@ void main() {
 
   group('Inner Product:', () {
     test('(List<num>, List<num>) value ', () {
-      expect(n2.innerProduct(n1), 74);
+      expect(n2.innerProd(n1), 74);
     });
     test('(List<num>, List<num>) runtimeType', () {
-      expect(n2.innerProduct(n1).runtimeType, double);
+      expect(n2.innerProd(n1).runtimeType, double);
     });
     test('(List<int>, List<int>).runtimeType', () {
-      expect(i1.innerProduct(i1).runtimeType, int);
+      expect(i1.innerProd(i1).runtimeType, int);
     });
     test('(List<num>, List<int>) value', () {
-      expect(n2.innerProduct(i1), 74);
+      expect(n2.innerProd(i1), 74);
     });
     test('(List<num>, List<int>) runtimeType', () {
-      expect(n2.innerProduct(i1).runtimeType, double);
+      expect(n2.innerProd(i1).runtimeType, double);
     });
     test('(List<n2>, List<d1>) runtimeType', () {
-      expect(n2.innerProduct(d1).runtimeType, double);
+      expect(n2.innerProd(d1).runtimeType, double);
     });
   });
 

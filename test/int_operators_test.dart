@@ -58,6 +58,10 @@ void main() {
     test('prod()', () {
       expect([1, 2, 3, 4].prod().runtimeType, int);
     });
+    test('innerProd()', () {
+      expect([1, 2, 3, 4].innerProd([1, 1, 1, 1]), 10);
+      expect([1, 2, 3, 4].innerProd([1, 1, 1, 1]).runtimeType, int);
+    });
   });
   group('Comparisons:', () {
     test('<', () {

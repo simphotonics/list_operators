@@ -70,8 +70,8 @@ extension NumOperators on List<num> {
   ///
   /// Info: Non-zero numerical vectors with the
   /// property: `this * other == 0` are called orthogonal.
-  num innerProduct(List<num> other) {
-    assertSameLength(other, operatorSymbol: 'innerProduct()');
+  num innerProd(List<num> other) {
+    assertSameLength(other, operatorSymbol: 'innerProd()');
     num sum = 0;
     for (var i = 0; i < length; i++) {
       sum += this[i] * other[i];
