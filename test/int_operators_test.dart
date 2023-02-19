@@ -77,10 +77,10 @@ void main() {
       expect(i2 >= i1, true);
     });
     test('match self', () {
-      expect(i1.match(i1 * 1), true);
+      expect(i1.equal(i1 * 1), true);
     });
     test('i1 != i2', () {
-      expect(i1.match(i2), false);
+      expect(i1.equal(i2), false);
     });
   });
 

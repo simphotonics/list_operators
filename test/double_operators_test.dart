@@ -9,14 +9,12 @@ void main() {
   final d1 = [1.0, 2.0, 3.0];
   final d2 = [11.0, 12.0, 13.0];
 
-  final listOfDouble = <double>[].runtimeType;
-
   group('Numerical operators:', () {
     test('-', () {
       expect(d2 - d1, <double>[10, 10, 10]);
-      expect((d2 - d1).runtimeType, listOfDouble);
+      expect(d2 - d1, isA<List<double>>());
       expect(d2 - i1, <double>[10, 10, 10]);
-      expect((d2 - n1).runtimeType, listOfDouble);
+      expect(d2 - n1, isA<List<double>>());
     });
 
     test('Unary minus', () {
@@ -44,6 +42,7 @@ void main() {
     test('plus()', () {
       expect(d1.plus(d2), d2.plus(d1));
       expect(d1.plus(d2), [12, 14, 16]);
+      expect(d1.plus(d2).runtimeType, d1.runtimeType);
     });
     test('pow()', () {
       expect(d1.pow(2), [1, 4, 9]);

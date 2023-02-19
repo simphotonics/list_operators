@@ -28,7 +28,9 @@ vector-style operators:
  * `a.prod()`: product of all elements,
  * `a.closeTo(b, precision)`: Returns `true` if `abs(a[i] - b[i]) <= precision`
    for each index `i`,
-* `a.equal(b)`: Returns `true` if `a[i] == b[i]` for each index `i`.
+* `a.equal(b)`: Returns `true` if `a[i] == b[i]` for each index `i`,
+* `a.equalWithinPrecision(b, precision)`: Returns `true` if
+  `(a[i] - b[i]) <= precision`.
 
 
  All methods are available for objects of type `List<num>`, `List<int>`, and
