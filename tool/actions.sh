@@ -18,34 +18,31 @@ echo -e "${BLUE}=== Resolving dependencies $PWD...${RESET}"
 echo
 
 # Make sure .dart_tool/package_config.json exists.
-pub get
+dart pub get
 
 # Upgrade packages.
-pub upgrade
+dart pub upgrade
 
 echo
 echo -e "${PURPLE}=== Checking Source Code Formatting${RESET} $PWD..."
 echo
 # Overwrite files with formatted content: -w
 # Dry run: -n
-dartfmt -w $(find bin lib test -name \*.dart 2>/dev/null)
+dart format example lib test
 
 # Analyze dart files
 echo
 echo -e "${BLUE}=== Analyzing $PWD...${RESET}"
 echo
 
-dartanalyzer \
-    --fatal-warnings \
-    --fatal-infos \
-    --packages="$PWD/.packages" \
-    $(find bin lib test benchmark example -name \*.dart 2>/dev/null)
+dart analyze --fatal-warnings --fatal-infos
+
 
 # Running tests
 echo
 echo -e "${CYAN}=== Testing $PWD...${RESET}"
 echo
-pub run test -r expanded --test-randomize-ordering-seed=random
+dart run test -r expanded --test-randomize-ordering-seed=random
 #pub run minimal_test:minimal_test.dart
 
 echo
