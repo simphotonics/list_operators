@@ -48,7 +48,7 @@ extension Comparison<T extends Comparable> on List<T> {
 
   /// Returns `true` if the equality
   /// `this(i) == other(i)` holds for each index `i`.
-  bool match(List<T> other) {
+  bool equal(List<T> other) {
     if (this == other) return true;
     if (length != other.length) return false;
     final it = iterator;
