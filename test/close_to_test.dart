@@ -1,5 +1,5 @@
 import 'package:list_operators/list_operators.dart';
-import 'package:test/test.dart';
+import 'package:test/test.dart' show test, group, expect, TestFailure;
 
 void expectToFail(
   dynamic actual,
@@ -14,41 +14,42 @@ void expectToFail(
 }
 
 void main() {
-  group('orderedCloseTo()', () {
+  group('closeTo()', () {
     test('Iterable<int>', () {
       final i1 = [101, 102];
       final i2 = [111, 103];
-      expectToFail(i1, orderedCloseTo(i2, [2, 2]),
+      final delta = 2;
+      expectToFail(i1, closeTo(i2, delta),
           failMessage: 'Expected: a numerical iterable differing from '
-              '[111, 103] by less than [2, 2]\n'
+              '[111, 103] by less than <$delta>\n'
               '  Actual: [101, 102]\n'
-              '   Which: at position \'0\' has value 101 and is outside the valid range [109, 113]\n'
+              '   Which: at position \'0\' has value <101> which is outside the valid range [109, 113]\n'
               '');
     });
     test('Iterable<double>', () {
       final d1 = [101, 102];
       final d2 = [104.0, 102.0];
-      expect(d1, orderedCloseTo(d2, [-4, 4]));
+      expect(d1, closeTo(d2, 4));
     });
     test('Iterable<num>', () {
       final n1 = <num>[101.0, 102.0];
       final n2 = <num>[105, 105];
-      expect(n2, orderedCloseTo(n1, [5.0, 5.0]));
+      expect(n2, closeTo(n1, 5));
     });
     test('Empty Iterable', () {
-      expect(<int>[], orderedCloseTo(<num>[], []));
+      expect(<int>[], closeTo(<num>[], 5));
     });
     test('Infinity', () {
-      expect([double.infinity], orderedCloseTo([0], [double.infinity]));
+      expect([double.infinity], closeTo([0], double.infinity));
     });
     test('NaN', () {
       expectToFail(
         [99],
-        orderedCloseTo([99], [double.nan]),
+        closeTo([99], double.nan),
         failMessage: 'Expected: a numerical iterable differing from '
-            '[99] by less than [NaN]\n'
+            '[99] by less than <NaN>\n'
             '  Actual: [99]\n'
-            '   Which: at position \'0\' has value 99 and is outside '
+            '   Which: at position \'0\' has value <99> which is outside '
             'the valid range [NaN, NaN]\n'
             '',
       );

@@ -1,0 +1,97 @@
+import 'package:matcher/matcher.dart';
+
+/// Returns a matcher which returns `true` if `actual[i]`
+/// is larger equal `expected[i] - delta`
+/// and smaller equal `expected[i] + delta`.
+///
+/// Note: All arguments are of type `Iterable<num>` and must have the
+/// same length in order to match.
+///
+/// Usage:
+/// ```
+/// final actual = [9.5, 5.6, 2.8];
+/// final expected = [9.81, 5.7, 3];
+/// final delta = 0.5;
+/// test('Comparing numerical lists', (){
+///   expect(actual, closeTo(expected, delta));
+/// });
+/// ```
+Matcher closeTo(Iterable<num> expected, num delta) => CloseTo(expected, delta);
+
+class CloseTo<T extends Iterable<num>> extends Matcher {
+  CloseTo(this.expected, num delta) : delta = delta.abs();
+
+  final T expected;
+  final num delta;
+
+  @override
+  bool matches(dynamic item, Map matchState) {
+    final expectedLength = expected.length;
+    final actualLength = item.length;
+    if (expectedLength != actualLength) {
+      addStateInfo(matchState, {
+        'length.actual': actualLength,
+        'length.expected': expectedLength,
+        'length.mismatch': true,
+      });
+      return false;
+    }
+    // try {
+    //   if (_expected.length != delta.length) {
+    //     throw ErrorOf<Matcher>(
+    //         message: 'Error using matcher \'orderedCloseTo()\'',
+    //         invalidState: 'Arguments expected: $_expected and '
+    //             'delta: $delta have different length.');
+    //   }
+    // } catch (exception, stack) {
+    //   addStateInfo(matchState, {
+    //     'length.delta': delta1.length,
+    //     'delta.exception': exception.toString(),
+    //     'delta.stack': stack.toString(),
+    //   });
+    // }
+
+    final actIt = item.iterator;
+    final expIt = expected.iterator;
+    var i = 0;
+    while (actIt.moveNext() && expIt.moveNext()) {
+      if ((actIt.current - expIt.current).abs() <= delta) {
+      } else {
+        addStateInfo(matchState, {
+          'mismatchAtPosition': i,
+          'actualAtPosition': actIt.current,
+          'expectedAtPosition': expIt.current,
+          'delta': delta,
+        });
+        return false;
+      }
+      ++i;
+    }
+    return true;
+  }
+
+  @override
+  Description describe(Description description) => description
+      .add('a numerical iterable differing from ')
+      .addDescriptionOf(expected)
+      .add(' by less than ')
+      .addDescriptionOf(delta);
+
+  @override
+  Description describeMismatch(
+    dynamic item,
+    Description mismatchDescription,
+    Map matchState,
+    bool verbose,
+  ) {
+    final position = matchState['mismatchAtPosition'];
+    final left = matchState['expectedAtPosition'] - matchState['delta'].abs();
+    final right = matchState['expectedAtPosition'] + matchState['delta'].abs();
+    final actualAtPosition = matchState['actualAtPosition'];
+
+    return mismatchDescription
+        .add('at position \'$position\' has value <$actualAtPosition> '
+            'which is outside the valid range ')
+      ..addDescriptionOf([left, right]);
+  }
+}
