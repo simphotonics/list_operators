@@ -25,8 +25,8 @@ void main() {
       expect(['b1', 'b2'] >= ['a1', 'a2'], true);
     });
     test('match', () {
-      expect(['a1', 'a2'].match(['b1', 'b2']), false);
-      expect(['a1', 'a2'].match(['a1', 'a2']), true);
+      expect(['a1', 'a2'].equal(['b1', 'b2']), false);
+      expect(['a1', 'a2'].equal(['a1', 'a2']), true);
     });
   });
 }
