@@ -23,7 +23,7 @@ extension IntOperators on List<int> {
 
   /// Returns `true` if the equality
   /// `this(i) == other(i)` holds for each index `i`.
-  bool match(List<int> other) {
+  bool equal(List<int> other) {
     if (this == other) return true;
     if (length != other.length) return false;
     final it = iterator;
