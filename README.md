@@ -2,11 +2,44 @@
 [![Dart](https://github.com/simphotonics/list_operators/actions/workflows/dart.yml/badge.svg)](https://github.com/simphotonics/list_operators/actions/workflows/dart.yml)
 
 ## Introduction
-The package [`list_operators`][list_operators] uses Dart extensions to provide additional operators for objects of type `List<num>` and `List<T extends Comparable>`.
+The package [`list_operators`][list_operators] uses Dart extensions to provide
+vector-style operators:
+* subtraction `a-b`: element by element,
+* unary `-a`,
+* scalar multiplication `a*x`, where a is a list and `x` is a `num`,
+* scalar division `a/x`, where a is a list and `x` is a `num`,
+* integer division `a~/x`, where a is a list and `x` is a `num`,
+* comparison operators `a < b, a <= b,  a > b, a >= b`: element by element,
+
+ and vector-style methods:
+ * `a.abs()`: absolute value,
+ * `a.plus(b)`: addition, element by element,
+ * `a.innerProd(b)`: inner product,
+ * `a.pow()`: power,
+ * `a.exp()`: exponentiation,
+ * `a.innerProd(b)`: inner product,
+ * `a.distance(b)`: distance using an Euclidian metric,
+ * `a.distanceFromOrigin()`,
+ * `a.min()`: minimum value,
+ * `a.max()`: maximum value,
+ * `a.mean()`: mean of all elements,
+ * `a.stdDev()`:  standard deviation,
+ * `a.sum()`: sum of all elements,
+ * `a.prod()`: product of all elements,
+ * `a.closeTo(b, precision)`: Returns `true` if `abs(a[i] - b[i]) <= precision`
+   for each index `i`,
+* `a.equal(b)`: Returns `true` if `a[i] == b[i]` for each index `i`.
+
+
+ All methods are available for objects of type `List<num>`, `List<int>`, and
+`List<double>`. Applicable methods are
+available for objects of type `List<T extends Comparable>`.
+
 
 ## Usage
-To use this package include [`list_operatos`][list_operators] as a `dependency` in your `pubspec.yaml` file.
-The programs below demonstrates how to use the operators and methods defined by the library `list_operators`.
+Include [`list_operatos`][list_operators] as a `dependency` in your `pubspec.yaml` file.
+The programs below demonstrates how to use operators and
+methods defined by the library `list_operators`.
 
 ### Methods and Operators For Objects of Type List\<num\>
 ```Dart
@@ -289,15 +322,14 @@ Inner lists are exported as columns.
 
 ## Limitations
 
-In its current version, Dart does not support function (and implicitly operator) overloading.
-For this reason some numerical operations defined by [`list_operators`][list_operators]
+In its current version, Dart does not support function
+(and implicitly operator) overloading.
+For this reason some numerical operations introduced by [`list_operators`][list_operators]
 are not symmetrical, even though intuitively they should be:
-- The expression `[1, 2, 3] * 10` is defined and the result is `[10, 20, 30]`.
-- The expression `10 * [1, 2, 3]` is not defined since the `*` operator defined for objects of type `int`
-expects a second operand of type `num`.
+- The expression `[1, 2, 3] * 10` is well defined and the result is `[10, 20, 30]`.
+- The expression `10 * [1, 2, 3]` is not defined since the `*` operator defined for objects of type `int` expects a second operand of type `num`.
 
-Note: The `+` operator (concatenates two lists) is already defined by Dart's abstract class [`List`][List] and
-cannot be overridden by an extension on [`List`][List].
+Note: The `+` operator (concatenates two lists) is already defined by Dart's abstract class [`List`][List] and cannot be overridden by an extension on [`List`][List].
 To add two numerical lists element by element use the method: `List<num> plus(List<num> other)`.
 
 ## Examples
