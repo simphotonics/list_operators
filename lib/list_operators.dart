@@ -1,6 +1,5 @@
 /// Library operators and functions for objects
 /// of type `List<T extends Comparable>`.
-library list_operators;
 
 export 'src/exceptions/list_length_mismatch.dart';
 export 'src/extensions/assertions.dart';
@@ -11,4 +10,4 @@ export 'src/extensions/double_operators.dart';
 export 'src/extensions/int_operators.dart';
 export 'src/extensions/num_operators.dart';
 export 'src/extensions/unmodifiable.dart';
-export 'src/matchers/ordered_close_to.dart';
+export 'src/matchers/close_to.dart';
