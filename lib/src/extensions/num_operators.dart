@@ -232,9 +232,9 @@ extension NumIterableOperators on Iterable<num> {
   /// * The list must have at least two elements.
   num stdDev() {
     assertHasElements(n: 2);
-    final _mean = mean();
+    final mean = this.mean();
     return math.sqrt(
-      fold<num>(0, (sum, element) => sum + math.pow(_mean - element, 2)) /
+      fold<num>(0, (sum, element) => sum + math.pow(mean - element, 2)) /
           (length - 1),
     );
   }
