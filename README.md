@@ -6,7 +6,7 @@ The package [`list_operators`][list_operators] uses Dart Extensions to provide
 operators and utility methods for objects of type `List` and `Iterable`.
 Note: The operators and methods listed below are *generative* in the sense that they
 return a new object. For example the unary negation operator `-a` applied to
-a list `a` returns a new list and does not modify the element of `a` in place.
+a list `a` returns a new list and does not modify the elements of `a` in place.
 
 
 Extensions on `List<T extends num>` provide the following
@@ -24,7 +24,7 @@ vector-style operators and methods:
 * `a.equal(b)`: Returns `true` if `a[i] == b[i]` for each index `i`,
 * `a.equalWithinPrecision(b, precision)`: Returns `true` if
  `(a[i] - b[i]) <= precision`. Note: The corresponding matcher is named
- [`closeTo`][closeTo] in analogy with the Dart package [`matcher`][matcher].
+ [`closeTo`][closeTo] in analogy with the package [`matcher`][matcher].
 
 For objects of type `Iterable<T extends num>`, which includes lists and sets,
 the following methods are provided:
@@ -49,7 +49,7 @@ in your `pubspec.yaml` file.
 The programs below demonstrates how to use operators and
 methods defined by the library `list_operators`.
 
-### Methods and Operators For Objects of Type List\<num\>
+#### Methods and Operators For Objects of Type List\<num\>:
 ```Dart
 import 'package:list_operators/list_operators.dart';
 
@@ -154,7 +154,7 @@ UnmodifiableListView<UnmodifiableListView<String>>
 ```
 </details><br/>
 
-### Methods For Objects of Type Iterable\<num\>
+#### Methods For Objects of Type Iterable\<num\>:
 
 ```Dart
 import 'package:list_operators/list_operators.dart';
@@ -214,7 +214,7 @@ Sum: b.sum()
 
 </details><br/>
 
-### Operators For Objects of Type List\<T extends Comparable\>
+#### Operators For Objects of Type List\<T extends Comparable\>:
 
 ```Dart
 import 'package:list_operators/list_operators.dart';
@@ -268,7 +268,7 @@ true
 ```
 </details><br/>
 
-### Methods for Exporting Numerical Lists as a String
+#### Methods for Exporting Numerical Lists as a String:
 
 ```Dart
 import 'package:list_operators/list_operators.dart';
