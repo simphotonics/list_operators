@@ -23,7 +23,8 @@ vector-style operators and methods:
 * `a.distanceFromOrigin()`,
 * `a.equal(b)`: Returns `true` if `a[i] == b[i]` for each index `i`,
 * `a.equalWithinPrecision(b, precision)`: Returns `true` if
- `(a[i] - b[i]) <= precision`.
+ `(a[i] - b[i]) <= precision`. Note: The corresponding matcher is named
+ [`closeTo`][closeTo] in analogy with the Dart package [`matcher`][matcher].
 
 For objects of type `Iterable<T extends num>`, which includes lists and sets,
 the following methods are provided:
@@ -348,6 +349,10 @@ The program shown above is included in the folder [`example`][example].
 Please file feature requests and bugs at the [issue tracker][tracker].
 
 [tracker]: https://github.com/simphotonics/list_operators/issues
+
+[closeTo]: https://pub.dev/packages/list_operators/latest/list_operators/closeTo.html
+
+[matcher]: https://pub.dev/packages/matcher
 
 [list_operators]: https://pub.dev/packages/list_operators
 
