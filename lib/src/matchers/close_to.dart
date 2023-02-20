@@ -4,8 +4,7 @@ import 'package:matcher/matcher.dart';
 /// is larger equal `expected[i] - delta`
 /// and smaller equal `expected[i] + delta`.
 ///
-/// Note: All arguments are of type `List<num>` and must have the
-/// same length in order to match.
+/// Note: The lists `actual` and `expected` must have the same length.
 ///
 /// Usage:
 /// ```
@@ -13,10 +12,10 @@ import 'package:matcher/matcher.dart';
 /// final expected = [9.81, 5.7, 3];
 /// final delta = 0.5;
 /// test('Comparing numerical lists', (){
-///   expect(actual, closeTo(expected, delta));
+///   expect(actual, isCloseTo(expected, delta));
 /// });
 /// ```
-Matcher closeTo(List<num> expected, num delta) => CloseTo(expected, delta);
+Matcher isCloseTo(List<num> expected, num delta) => CloseTo(expected, delta);
 
 class CloseTo<T extends List<num>> extends Matcher {
   CloseTo(this.expected, num delta) : delta = delta.abs();
