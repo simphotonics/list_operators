@@ -23,7 +23,8 @@ void main() {
           failMessage: 'Expected: a numerical iterable differing from '
               '[111, 103] by less than <$delta>\n'
               '  Actual: [101, 102]\n'
-              '   Which: at position \'0\' has value <101> which is outside the valid range [109, 113]\n'
+              '   Which: at position \'0\' has value <101> which is outside'
+              ' the valid range [109, 113].\n'
               '');
     });
     test('Iterable<double>', () {
@@ -50,7 +51,7 @@ void main() {
             '[99] by less than <NaN>\n'
             '  Actual: [99]\n'
             '   Which: at position \'0\' has value <99> which is outside '
-            'the valid range [NaN, NaN]\n'
+            'the valid range [NaN, NaN].\n'
             '',
       );
     });
