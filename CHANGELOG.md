@@ -1,3 +1,8 @@
+## 0.3.1
+- Updated dependencies.
+- Renamed matcher `orderedCloseTo` -> `isCloseTo`.
+- Extended documentation.
+
 ## 0.3.0
 
 - Renamed method `innerProduct` -> `innerProd`.
@@ -11,7 +16,7 @@ in sequential order.
 ## 0.2.8
 
 - Amended docs.
-- Made methods `min()`, `max()`, `prod()` available for object of type `Iterable<num>`.
+- Made methods `min()`, `max()`, `prod()` available for objects of type `Iterable<num>`.
 
 ## 0.2.7
 
@@ -19,7 +24,7 @@ Added method `prod()` returning the product of all entries.
 
 ## 0.2.6
 
-Made method `sum()` available to `Iterable<T extends num>`.
+Made method `sum()` available for object of type `Iterable<T extends num>`.
 
 ## 0.2.5
 
