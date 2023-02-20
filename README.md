@@ -334,7 +334,8 @@ In its current version, Dart does not support function
 For this reason some numerical operations introduced by [`list_operators`][list_operators]
 are not symmetrical, even though intuitively they should be:
 - The expression `[1, 2, 3] * 10` is well defined and the result is `[10, 20, 30]`.
-- The expression `10 * [1, 2, 3]` is not defined since the `*` operator defined for objects of type `int` expects a second operand of type `num`.
+- The expression `10 * [1, 2, 3]` is not defined since the `*`
+  for objects of type `int` expects a second operand of type `num`.
 
 Note: The `+` operator (concatenates two lists) is already defined by Dart's abstract class [`List`][List] and cannot be overridden by an extension on [`List`][List].
 To add two numerical lists element by element use the method: `List<num> plus(List<num> other)`.
