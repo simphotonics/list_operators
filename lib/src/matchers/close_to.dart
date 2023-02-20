@@ -2,7 +2,7 @@ import 'package:matcher/matcher.dart';
 
 /// Returns a matcher which returns `true` if `actual[i]`
 /// is larger equal `expected[i] - delta`
-/// and smaller equal `expected[i] + delta`.
+/// and smaller equal `expected[i] + delta` for each index `i`.
 ///
 /// Note: The lists `actual` and `expected` must have the same length.
 ///

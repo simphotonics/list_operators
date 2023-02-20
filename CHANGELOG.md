@@ -1,3 +1,6 @@
+## 0.3.2
+- Updated docs.
+
 ## 0.3.1
 - Updated dependencies.
 - Renamed matcher `orderedCloseTo` -> `isCloseTo`.
