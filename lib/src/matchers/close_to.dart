@@ -91,6 +91,6 @@ class CloseTo<T extends List<num>> extends Matcher {
     return mismatchDescription
         .add('at position \'$position\' has value <$actualAtPosition> '
             'which is outside the valid range ')
-      ..addDescriptionOf([left, right]);
+        .addDescriptionOf([left, right]).add('.');
   }
 }

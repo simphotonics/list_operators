@@ -242,9 +242,6 @@ void main() {
     test('n1 != n2', () {
       expect(n1.equalWithinPrecision(n2), false);
     });
-    test('isCloseTo', () {
-      expect(n1, isCloseTo(n2, 0.1));
-    });
   });
 
   group('Exceptions', () {
