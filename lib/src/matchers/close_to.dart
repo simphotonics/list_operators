@@ -4,7 +4,7 @@ import 'package:matcher/matcher.dart';
 /// is larger equal `expected[i] - delta`
 /// and smaller equal `expected[i] + delta`.
 ///
-/// Note: All arguments are of type `Iterable<num>` and must have the
+/// Note: All arguments are of type `List<num>` and must have the
 /// same length in order to match.
 ///
 /// Usage:
@@ -16,9 +16,9 @@ import 'package:matcher/matcher.dart';
 ///   expect(actual, closeTo(expected, delta));
 /// });
 /// ```
-Matcher closeTo(Iterable<num> expected, num delta) => CloseTo(expected, delta);
+Matcher closeTo(List<num> expected, num delta) => CloseTo(expected, delta);
 
-class CloseTo<T extends Iterable<num>> extends Matcher {
+class CloseTo<T extends List<num>> extends Matcher {
   CloseTo(this.expected, num delta) : delta = delta.abs();
 
   final T expected;

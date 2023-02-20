@@ -1,4 +1,4 @@
-import 'dart:collection';
+import 'dart:collection' show UnmodifiableListView;
 
 /// Extension providing the method `unmodifiable()`.
 extension Unmodifiable<T> on List<T> {

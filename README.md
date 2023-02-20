@@ -2,44 +2,49 @@
 [![Dart](https://github.com/simphotonics/list_operators/actions/workflows/dart.yml/badge.svg)](https://github.com/simphotonics/list_operators/actions/workflows/dart.yml)
 
 ## Introduction
-The package [`list_operators`][list_operators] uses Dart extensions to provide
-vector-style operators:
-* subtraction `a-b`: element by element,
-* unary `-a`,
-* scalar multiplication `a*x`, where a is a list and `x` is a `num`,
-* scalar division `a/x`, where a is a list and `x` is a `num`,
-* integer division `a~/x`, where a is a list and `x` is a `num`,
-* comparison operators `a < b, a <= b,  a > b, a >= b`: element by element,
+The package [`list_operators`][list_operators] uses Dart Extensions to provide
+operators and utility methods for objects of type `List` and `Iterable`.
+Note: The operators and methods listed below are *generative* in the sense that they
+return a new object. For example the unary negation operator `-a` applied to
+a list `a` returns a new list and does not modify the element of `a` in place.
 
- and vector-style methods:
+
+Extensions on `List<T extends num>` provide the following
+vector-style operators and methods:
+* subtraction `a-b`: element by element,
+* unary negation `-a`: negates every element,
+* scalar multiplication `a*x`: `x` is a `num`,
+* scalar division `a/x`: `x` is a `num`,
+* integer division `a~/x`: `x` is a `num`,
+* `a.plus(b)`: addition, element by element,
+* `a.innerProd(b)`: the inner product &Sigma;<sub>i</sub>
+  (a<sub>i</sub> &middot;   b<sub>i</sub>),
+* `a.distance(b)`: distance using an Euclidian metric,
+* `a.distanceFromOrigin()`,
+* `a.equal(b)`: Returns `true` if `a[i] == b[i]` for each index `i`,
+* `a.equalWithinPrecision(b, precision)`: Returns `true` if
+ `(a[i] - b[i]) <= precision`.
+
+For objects of type `Iterable<T extends num>`, which includes lists and sets,
+the following methods are provided:
  * `a.abs()`: absolute value,
- * `a.plus(b)`: addition, element by element,
- * `a.innerProd(b)`: inner product,
  * `a.pow()`: power,
  * `a.exp()`: exponentiation,
- * `a.innerProd(b)`: inner product,
- * `a.distance(b)`: distance using an Euclidian metric,
- * `a.distanceFromOrigin()`,
  * `a.min()`: minimum value,
  * `a.max()`: maximum value,
  * `a.mean()`: mean of all elements,
  * `a.stdDev()`:  standard deviation,
  * `a.sum()`: sum of all elements,
- * `a.prod()`: product of all elements,
- * `a.closeTo(b, precision)`: Returns `true` if `abs(a[i] - b[i]) <= precision`
-   for each index `i`,
-* `a.equal(b)`: Returns `true` if `a[i] == b[i]` for each index `i`,
-* `a.equalWithinPrecision(b, precision)`: Returns `true` if
-  `(a[i] - b[i]) <= precision`.
+ * `a.prod()`: product of all elements.
 
+For objects of type `List<T extends Comparable>` the library introduces the
+comparison operators `a < b, a <= b,  a > b, a >= b`.
 
- All methods are available for objects of type `List<num>`, `List<int>`, and
-`List<double>`. Applicable methods are
-available for objects of type `List<T extends Comparable>`.
 
 
 ## Usage
-Include [`list_operatos`][list_operators] as a `dependency` in your `pubspec.yaml` file.
+Include [`list_operatos`][list_operators] as a `dependency`
+in your `pubspec.yaml` file.
 The programs below demonstrates how to use operators and
 methods defined by the library `list_operators`.
 
