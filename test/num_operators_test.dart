@@ -11,25 +11,21 @@ void main() {
   final n2 = [11, 12.0, 13];
   final d1 = [1.0, 2.0, 3.0];
 
-  final listOfNumType = <num>[].runtimeType;
-  final listOfDoubleType = <double>[].runtimeType;
-  final listOfIntType = <int>[].runtimeType;
-
   group('Minus:', () {
     test('List<num> - List<num> ', () {
       expect(n2 - n1, <num>[10, 10, 10]);
     });
-    test('(List<num> - List<num>).runtimeType', () {
-      expect((n2 - n1).runtimeType, listOfNumType);
+    test('(List<num> - List<num>)', () {
+      expect((n2 - n1), isA<List<num>>());
     });
     test('List<num> - List<int>', () {
       expect(n2 - i1, <num>[10, 10, 10]);
     });
-    test('(List<num> - List<int>).runtimeType', () {
-      expect((n2 - i1).runtimeType, listOfNumType);
+    test('(List<num> - List<int>)', () {
+      expect((n2 - i1), isA<List<num>>());
     });
-    test('(List<num> - List<double>).runtimeType', () {
-      expect((n2 - d1).runtimeType, listOfDoubleType);
+    test('(List<num> - List<double>)', () {
+      expect((n2 - d1), isA<List<double>>());
     });
   });
 
@@ -37,17 +33,17 @@ void main() {
     test('List<num>.plus(List<num>)', () {
       expect(n2.plus(n1), <num>[12, 14, 16]);
     });
-    test('List<num>.plus(List<num>).runtimeType', () {
-      expect(n2.plus(n1).runtimeType, listOfNumType);
+    test('List<num>.plus(List<num>)', () {
+      expect(n2.plus(n1), isA<List<num>>());
     });
     test('List<num>plus(List<int>)', () {
       expect(n2.plus(i1), <num>[12, 14, 16]);
     });
-    test('(num + int).runtimeType', () {
-      expect(n2.plus(i1).runtimeType, listOfNumType);
+    test('(num + int)', () {
+      expect(n2.plus(i1), isA<List<num>>());
     });
-    test('List<num>.plus(List<double>).runtimeType', () {
-      expect(n2.plus(d1).runtimeType, listOfDoubleType);
+    test('List<num>.plus(List<double>)', () {
+      expect(n2.plus(d1), isA<List<double>>());
     });
   });
 
@@ -56,19 +52,19 @@ void main() {
       expect(n2.innerProd(n1), 74);
     });
     test('(List<num>, List<num>) runtimeType', () {
-      expect(n2.innerProd(n1).runtimeType, double);
+      expect(n2.innerProd(n1), isA<double>());
     });
-    test('(List<int>, List<int>).runtimeType', () {
-      expect(i1.innerProd(i1).runtimeType, int);
+    test('(List<int>, List<int>)', () {
+      expect(i1.innerProd(i1), isA<int>());
     });
     test('(List<num>, List<int>) value', () {
       expect(n2.innerProd(i1), 74);
     });
     test('(List<num>, List<int>) runtimeType', () {
-      expect(n2.innerProd(i1).runtimeType, double);
+      expect(n2.innerProd(i1), isA<double>());
     });
     test('(List<n2>, List<d1>) runtimeType', () {
-      expect(n2.innerProd(d1).runtimeType, double);
+      expect(n2.innerProd(d1), isA<double>());
     });
   });
 
@@ -77,21 +73,21 @@ void main() {
       expect(n1 * 2, [2, 4, 6]);
     });
     test('(num, int) type', () {
-      expect((n1 * 2).runtimeType, listOfNumType);
+      expect((n1 * 2), isA<List<num>>());
     });
 
     test('(int, int) value', () {
       expect(i1 * 2, [2, 4, 6]);
     });
     test('(int, int) type', () {
-      expect((i1 * 2).runtimeType, listOfIntType);
+      expect((i1 * 2), isA<List<int>>());
     });
 
     test('(double, int) value', () {
       expect(d1 * 2, [2, 4, 6]);
     });
     test('(double, int) type', () {
-      expect((d1 * 2).runtimeType, listOfDoubleType);
+      expect((d1 * 2), isA<List<double>>());
     });
   });
 
@@ -100,19 +96,19 @@ void main() {
       expect(-i1, i1 * -1);
     });
     test('type of -int', () {
-      expect((-i1).runtimeType, listOfIntType);
+      expect((-i1), isA<List<int>>());
     });
     test('value of -num', () {
       expect(-n1, n1 * -1);
     });
     test('type of -num', () {
-      expect((-n1).runtimeType, listOfNumType);
+      expect((-n1), isA<List<num>>());
     });
     test('value of -double', () {
       expect(-d1, d1 * -1);
     });
     test('type of -double', () {
-      expect((-d1).runtimeType, listOfDoubleType);
+      expect((-d1), isA<List<double>>());
     });
   });
 
@@ -122,7 +118,7 @@ void main() {
       expect(i1 / 2, [0.5, 1, 1.5]);
     });
     test('type', () {
-      expect((i1 / 2).runtimeType, listOfDoubleType);
+      expect((i1 / 2), isA<List<double>>());
     });
   });
 
@@ -142,7 +138,7 @@ void main() {
     });
 
     test('List<num> type', () {
-      expect(n1.abs().runtimeType, listOfNumType);
+      expect(n1.abs(), isA<List<num>>());
     });
     test('List<int> value', () {
       expect(i1.abs(), [1, 2, 3]);
@@ -150,7 +146,7 @@ void main() {
     });
 
     test('List<int> type', () {
-      expect(i1.abs().runtimeType, listOfIntType);
+      expect(i1.abs(), isA<List<int>>());
     });
     test('List<double> value', () {
       expect(d1.abs(), [1, 2, 3]);
@@ -158,7 +154,7 @@ void main() {
     });
 
     test('List<double> type', () {
-      expect(d1.abs().runtimeType, listOfDoubleType);
+      expect(d1.abs(), isA<List<double>>());
     });
   });
 
@@ -173,13 +169,13 @@ void main() {
       expect(d1.pow(2), [1, 4, 9]);
     });
     test('List<num> type', () {
-      expect(n1.pow(2).runtimeType, listOfNumType);
+      expect(n1.pow(2), isA<List<num>>());
     });
     test('List<int> type', () {
-      expect(i1.pow(2).runtimeType, listOfIntType);
+      expect(i1.pow(2), isA<List<int>>());
     });
     test('List<double> type', () {
-      expect(d1.pow(2).runtimeType, listOfDoubleType);
+      expect(d1.pow(2), isA<List<double>>());
     });
   });
   group('exp()', () {
@@ -193,13 +189,13 @@ void main() {
       expect(d1.exp(2), [exp(d1[0] * 2), exp(d1[1] * 2), exp(d1[2] * 2)]);
     });
     test('List<num> type', () {
-      expect(n1.exp(2).runtimeType, listOfDoubleType);
+      expect(n1.exp(2), isA<List<double>>());
     });
     test('List<int> type', () {
-      expect(i1.exp(2).runtimeType, listOfDoubleType);
+      expect(i1.exp(2), isA<List<double>>());
     });
     test('List<double> type', () {
-      expect(d1.exp(2).runtimeType, listOfDoubleType);
+      expect(d1.exp(2), isA<List<double>>());
     });
   });
   group('Methods:', () {
@@ -223,8 +219,8 @@ void main() {
     });
     test('prod()', () {
       expect([1, 2, 3, 4].prod(), 24);
-      expect(<num>[1, 2, 3, 4].prod().runtimeType, int);
-      expect(<num>[1, 2, 3, 4.0].prod().runtimeType, double);
+      expect(<num>[1, 2, 3, 4].prod(), isA<int>());
+      expect(<num>[1, 2, 3, 4.0].prod(), isA<double>());
     });
   });
   group('Comparisons:', () {

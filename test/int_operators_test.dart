@@ -9,14 +9,12 @@ void main() {
   final n1 = [1, 2.0, 3];
   final d1 = [1.0, 2.0, 3.0];
 
-  final listOfInt = <int>[].runtimeType;
-
   group('Numerical operators:', () {
     test('-', () {
       expect(i2 - i1, <int>[10, 10, 10]);
-      expect((i2 - i1).runtimeType, listOfInt);
+      expect((i2 - i1), isA<List<int>>());
       expect(i2 - n1.toInt(), <int>[10, 10, 10]);
-      expect((i2 - d1.toInt()).runtimeType, listOfInt);
+      expect(i2 - d1.toInt(), isA<List<int>>());
     });
 
     test('Unary minus', () {
@@ -56,11 +54,11 @@ void main() {
       expect([7, 8, -9].max(), 8);
     });
     test('prod()', () {
-      expect([1, 2, 3, 4].prod().runtimeType, int);
+      expect([1, 2, 3, 4].prod(), isA<int>());
     });
     test('innerProd()', () {
       expect([1, 2, 3, 4].innerProd([1, 1, 1, 1]), 10);
-      expect([1, 2, 3, 4].innerProd([1, 1, 1, 1]).runtimeType, int);
+      expect([1, 2, 3, 4].innerProd([1, 1, 1, 1]), isA<int>());
     });
   });
   group('Comparisons:', () {
