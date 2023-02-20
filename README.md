@@ -3,14 +3,14 @@
 
 ## Introduction
 The package [`list_operators`][list_operators] uses Dart Extensions to provide
-operators and utility methods for objects of type `List` and `Iterable`.
+*operators* and *utility methods* for objects of type `List` and `Iterable`.
 Note: The operators and methods listed below are *generative* in the sense that they
 return a new object. For example the unary negation operator `-a` applied to
 a list `a` returns a new list and does not modify the elements of `a` in place.
 
 
-Extensions on `List<T extends num>` provide the following
-vector-style operators and methods:
+Extensions on `List<T extends num>` make the following
+vector-style operators and methods availabe:
 * subtraction `a-b`: element by element,
 * unary negation `-a`: negates every element,
 * scalar multiplication `a*x`: `x` is a `num`,
@@ -40,7 +40,6 @@ the following methods are provided:
 
 For objects of type `List<T extends Comparable>` the library introduces the
 comparison operators `a < b, a <= b,  a > b, a >= b`.
-
 
 
 ## Usage
@@ -180,7 +179,7 @@ void main() {
   print('');
 
   print('Standard deviation: b.stdDev()');
-  print(b.stdDev());
+  print(b.stdDev());prod()
   print('');
 
   print('Sum: b.sum()');
@@ -315,7 +314,7 @@ Exporting lists to String:
 Exporting an object of type List<List<num>> to String:
 Each inner list is exported as a row.
 <<Sample label>>
-1.00000 2.00000 3.00000
+1.00000 2.00000 3.00000prod()
 101.000 102.000 103.000
 
 Exporting an object of type List<List<num>> to String.
@@ -342,7 +341,7 @@ To add two numerical lists element by element use the method: `List<num> plus(Li
 
 ## Examples
 
-The program shown above is included in the folder [`example`][example].
+The programs shown above are included in the folder [`example`][example].
 
 ## Features and bugs
 
