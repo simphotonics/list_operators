@@ -12,15 +12,16 @@ import 'package:matcher/matcher.dart';
 /// final expected = [9.81, 5.7, 3];
 /// final delta = 0.5;
 /// test('Comparing numerical lists', (){
-///   expect(actual, isCloseTo(expected, delta));
+///   expect(actual, closeToList(expected, delta));
 /// });
 /// ```
-Matcher isCloseTo(List<num> expected, num delta) => CloseTo(expected, delta);
+Matcher closeToList<T extends num>(List<T> expected, num delta) =>
+    CloseToList(expected, delta);
 
-class CloseTo<T extends List<num>> extends Matcher {
-  CloseTo(this.expected, num delta) : delta = delta.abs();
+class CloseToList<T extends num> extends Matcher {
+  CloseToList(this.expected, num delta) : delta = delta.abs();
 
-  final T expected;
+  final List<T> expected;
   final num delta;
 
   @override

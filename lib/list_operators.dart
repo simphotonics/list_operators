@@ -10,4 +10,4 @@ export 'src/extensions/double_operators.dart';
 export 'src/extensions/int_operators.dart';
 export 'src/extensions/num_operators.dart';
 export 'src/extensions/unmodifiable.dart';
-export 'src/matchers/close_to.dart';
+export 'src/matchers/close_to_list.dart';

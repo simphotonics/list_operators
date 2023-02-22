@@ -1,3 +1,7 @@
+## 0.3.3
+- Renamed matcher function `isCloseTo` -> `closeToList`.
+- Renamed matcher `CloseTo` -> `CloseToList`.
+
 ## 0.3.2
 - Updated docs.
 

@@ -25,7 +25,7 @@ vector-style operators and methods availabe:
 * `a.equalWithinPrecision(b, precision)`: Returns `true` if
  `(a[i] - b[i]) <= precision` for each index `i`.
   Note: The corresponding matcher is named
-  [`isCloseTo`][isCloseTo] in analogy with the package [`matcher`][matcher].
+  [`CloseToList`][CloseToList] in analogy with the package [`matcher`][matcher].
 
 For objects of type `Iterable<T extends num>`, which includes lists and sets,
 the following methods are provided:
@@ -352,7 +352,7 @@ Please file feature requests and bugs at the [issue tracker][tracker].
 
 [tracker]: https://github.com/simphotonics/list_operators/issues
 
-[isCloseTo]: https://pub.dev/documentation/list_operators/latest/list_operators/isCloseTo.html
+[CloseToList]: https://pub.dev/documentation/list_operators/latest/list_operators/CloseToList-class.html
 
 [matcher]: https://pub.dev/packages/matcher
 
