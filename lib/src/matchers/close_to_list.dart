@@ -16,7 +16,7 @@ import 'package:matcher/matcher.dart';
 /// });
 /// ```
 Matcher closeToList<T extends num>(List<T> expected, num delta) =>
-    CloseToList(expected, delta);
+    CloseToList<T>(expected, delta);
 
 class CloseToList<T extends num> extends Matcher {
   CloseToList(this.expected, num delta) : delta = delta.abs();
