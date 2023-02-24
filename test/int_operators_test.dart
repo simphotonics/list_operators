@@ -86,7 +86,7 @@ void main() {
     test('ListLengthMismatch', () {
       try {
         [0, 1] - [1, 3, 4];
-      } on ErrorOfType<ListLengthMismatch> catch (e) {
+      } on ErrorOfType<LengthMismatch> catch (e) {
         expect(e.message, 'Error using \'-\' with List<int>.');
       }
     });

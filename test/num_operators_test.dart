@@ -248,7 +248,7 @@ void main() {
     test('ListLengthMismatch', () {
       try {
         [0, 1].distance([1, 3, 4]);
-      } on ErrorOfType<ListLengthMismatch> catch (e) {
+      } on ErrorOfType<LengthMismatch> catch (e) {
         expect(e.message,
             'Can\'t calculate distance between [0, 1] and [1, 3, 4].');
       }
