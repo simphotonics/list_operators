@@ -18,6 +18,8 @@ import 'package:matcher/matcher.dart';
 Matcher closeToList<T extends num>(List<T> expected, num delta) =>
     CloseToList<T>(expected, delta);
 
+/// A class extending [Matcher] that matches two numerical lists
+/// within a certain precision.
 class CloseToList<T extends num> extends Matcher {
   CloseToList(this.expected, num delta) : delta = delta.abs();
 

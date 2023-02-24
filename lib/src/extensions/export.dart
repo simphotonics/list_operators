@@ -1,4 +1,4 @@
-/// Exporting objects of type `List<List<num>>` to a formatted String.
+/// Exports objects of type `List<List<num>>` as a formatted String.
 extension ExportListOfList on List<List<num>> {
   /// Converts an object of type `List<List<num>>` to a `String`.
   /// * `label`: An optional label exported as first row.
@@ -41,7 +41,7 @@ extension ExportListOfList on List<List<num>> {
   }
 }
 
-/// Exporting object of type `List<num>` to a formatted String.
+/// Exports objects of type `List<num>` as a formatted String.
 extension ExportList on List<num> {
   /// Converts an object of type `List<num>` to a `String`.
   /// * `label`: An optional label as first row.
