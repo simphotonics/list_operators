@@ -1,3 +1,7 @@
+## 0.3.4
+- Converted method `unmodifiable()` to getter `unmodifiable`.
+  Applies to extensions on `List<T>` and `List<List<T>>`.
+
 ## 0.3.3
 - Renamed matcher function `isCloseTo` -> `closeToList`.
 - Renamed matcher `CloseTo` -> `CloseToList`.

@@ -12,19 +12,19 @@ void main() {
 
   group('Unmodifiable:', () {
     test('value', () {
-      expect(i1.unmodifiable(), i1);
+      expect(i1.unmodifiable, i1);
     });
     test('type', () {
-      expect(i1.unmodifiable().runtimeType, u1.runtimeType);
+      expect(i1.unmodifiable.runtimeType, u1.runtimeType);
     });
   });
 
   group('RecursiveUnmodifiable:', () {
     test('value', () {
-      expect(i2.unmodifiable(), i2);
+      expect(i2.unmodifiable, i2);
     });
     test('type', () {
-      expect(i2.unmodifiable().runtimeType, u2.runtimeType);
+      expect(i2.unmodifiable.runtimeType, u2.runtimeType);
     });
   });
 

@@ -55,7 +55,7 @@ void main() {
   ];
 
   // Extension works for objects of type List<T> and List<List<T>>
-  final listView = list.unmodifiable();
+  final listView = list.unmodifiable;
 
   // Prints: UnmodifiableListView<UnmodifiableListView<String>>
   print(listView.runtimeType);
