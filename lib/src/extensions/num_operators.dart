@@ -172,12 +172,12 @@ extension NumOperators on List<num> {
   }
 
   /// Returns a new list containing the elements of `this` converted to `int`.
-  List<int> toInt() {
+  List<int> toListOfInt() {
     return List<int>.generate(length, (i) => this[i].toInt());
   }
 
   /// Returns a new list containing the elements of `this` converted to `double`.
-  List<double> toDouble() {
+  List<double> toListOfDouble() {
     return List<double>.generate(length, (i) => this[i].toDouble());
   }
 

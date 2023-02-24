@@ -13,8 +13,8 @@ void main() {
     test('-', () {
       expect(i2 - i1, <int>[10, 10, 10]);
       expect((i2 - i1), isA<List<int>>());
-      expect(i2 - n1.toInt(), <int>[10, 10, 10]);
-      expect(i2 - d1.toInt(), isA<List<int>>());
+      expect(i2 - n1.toListOfInt(), <int>[10, 10, 10]);
+      expect(i2 - d1.toListOfInt(), isA<List<int>>());
     });
 
     test('Unary minus', () {

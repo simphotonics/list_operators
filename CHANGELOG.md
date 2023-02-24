@@ -1,3 +1,8 @@
+## 0.3.5
+
+- Renamed method `toInt()` -> `toListofInt()`.
+- Renamed method `toDouble()` -> `toListOfDouble()`.
+
 ## 0.3.4
 - Converted method `unmodifiable()` to getter `unmodifiable`.
   Applies to extensions on `List<T>` and `List<List<T>>`.

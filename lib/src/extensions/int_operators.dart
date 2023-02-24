@@ -15,11 +15,6 @@ extension IntOperators on List<int> {
     return List<int>.generate(length, (i) => this[i] * scalar);
   }
 
-  /// Returns a new list containing the elements of `this` converted to `double`.
-  List<double> toDouble() {
-    return List<double>.generate(length, (i) => this[i].toDouble());
-  }
-
   /// Returns `true` if the equality
   /// `this(i) == other(i)` holds for each index `i`.
   bool equal(List<int> other) {
