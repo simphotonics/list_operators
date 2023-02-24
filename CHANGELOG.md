@@ -1,6 +1,8 @@
 ## 0.3.4
 - Converted method `unmodifiable()` to getter `unmodifiable`.
   Applies to extensions on `List<T>` and `List<List<T>>`.
+- Renamed methods starting with `assert` to `mustHave` in
+  order to avoid confusion with actual asserts.
 
 ## 0.3.3
 - Renamed matcher function `isCloseTo` -> `closeToList`.
