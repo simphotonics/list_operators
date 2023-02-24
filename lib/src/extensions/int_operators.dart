@@ -1,8 +1,7 @@
 import 'dart:math' as math;
 
-import 'assertions.dart';
+import 'must_have.dart';
 
-/// Provides additional operators and methods for objects of type List<int>.
 extension IntOperators on List<int> {
   /// Returns a new list consisting of the absolute value of
   /// the elements of `this`.
@@ -41,9 +40,9 @@ extension IntOperators on List<int> {
   /// * The elements of `this` and `other` are multiplied
   /// component-wise and summed.
   /// Info: Non-zero numerical vectors with the
-  /// property: `this * other == 0` are called orthogonal.
+  /// property: `this * other == 0` are called *orthogonal*.
   int innerProd(List<int> other) {
-    assertSameLength(other, operatorSymbol: 'innerProd()');
+    mustHaveSameLength(other, operatorSymbol: 'innerProd()');
     var sum = 0;
     for (var i = 0; i < length; i++) {
       sum += this[i] * other[i];
@@ -56,14 +55,14 @@ extension IntIterableOperators on Iterable<int> {
   /// Returns the minimum value.
   /// * The list must have at least one element.
   int min() {
-    assertHasElements();
+    mustHaveElements();
     return reduce((value, element) => math.min(value, element));
   }
 
   /// Returns the maximum value.
   /// * The list must have at least one element.
   int max() {
-    assertHasElements();
+    mustHaveElements();
     return reduce((value, element) => math.max(value, element));
   }
 
@@ -71,7 +70,7 @@ extension IntIterableOperators on Iterable<int> {
   ///
   /// The iterable must not be empty.
   int sum() {
-    assertHasElements();
+    mustHaveElements();
     return fold<int>(0, (sum, current) => sum + current);
   }
 
@@ -79,7 +78,7 @@ extension IntIterableOperators on Iterable<int> {
   ///
   /// The iterable must not be empty.
   int prod() {
-    assertHasElements();
+    mustHaveElements();
     return fold<int>(1, (prod, current) => prod * current);
   }
 }

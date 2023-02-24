@@ -1,15 +1,14 @@
 import 'dart:math' as math;
 
-import 'assertions.dart';
+import 'must_have.dart';
 
-/// Extension providing operators for objects of type List<num>.
 extension NumOperators on List<num> {
   /// Returns a new list consisting of the elements of `this` added to
   /// the elements of `other`.
   ///
   /// Note: The operator `+` is already in use and concatenates two lists.
   List<num> plus(List<num> other) {
-    assertSameLength(other, operatorSymbol: '+');
+    mustHaveSameLength(other, operatorSymbol: '+');
     if (this is List<int> && other is List<int>) {
       return List<int>.generate(
           length, (i) => this[i].toInt() + other[i].toInt());
@@ -47,7 +46,7 @@ extension NumOperators on List<num> {
   /// Returns a new list consisting of the difference of the elements of `this`
   /// and `other`.
   List<num> operator -(List<num> other) {
-    assertSameLength(other, operatorSymbol: '-');
+    mustHaveSameLength(other, operatorSymbol: '-');
     if (this is List<int> && other is List<int>) {
       return List<int>.generate(
           length, (i) => this[i].toInt() - other[i].toInt());
@@ -71,7 +70,7 @@ extension NumOperators on List<num> {
   /// Info: Non-zero numerical vectors with the
   /// property: `this * other == 0` are called orthogonal.
   num innerProd(List<num> other) {
-    assertSameLength(other, operatorSymbol: 'innerProd()');
+    mustHaveSameLength(other, operatorSymbol: 'innerProd()');
     num sum = 0;
     for (var i = 0; i < length; i++) {
       sum += this[i] * other[i];
@@ -130,7 +129,7 @@ extension NumOperators on List<num> {
 
   /// Returns true if the inequality `<` holds for each component.
   bool operator <(List<num> other) {
-    assertSameLength(other, operatorSymbol: '<');
+    mustHaveSameLength(other, operatorSymbol: '<');
     for (var i = 0; i < length; i++) {
       if (this[i] >= other[i]) {
         return false;
@@ -141,7 +140,7 @@ extension NumOperators on List<num> {
 
   /// Returns true if the inequality `<=` holds for each component.
   bool operator <=(List<num> other) {
-    assertSameLength(other, operatorSymbol: '<');
+    mustHaveSameLength(other, operatorSymbol: '<');
     for (var i = 0; i < length; i++) {
       if (this[i] > other[i]) {
         return false;
@@ -152,7 +151,7 @@ extension NumOperators on List<num> {
 
   /// Returns true if the inequality `>` holds for each component.
   bool operator >(List<num> other) {
-    assertSameLength(other, operatorSymbol: '>');
+    mustHaveSameLength(other, operatorSymbol: '>');
     for (var i = 0; i < length; i++) {
       if (this[i] <= other[i]) {
         return false;
@@ -163,7 +162,7 @@ extension NumOperators on List<num> {
 
   /// Returns true if the inequality `>=` holds for each component.
   bool operator >=(List<num> other) {
-    assertSameLength(other, operatorSymbol: '>');
+    mustHaveSameLength(other, operatorSymbol: '>');
     for (var i = 0; i < length; i++) {
       if (this[i] < other[i]) {
         return false;
@@ -202,21 +201,21 @@ extension NumIterableOperators on Iterable<num> {
   /// Returns the minimum value.
   /// * The list must have at least one element.
   num min() {
-    assertHasElements();
+    mustHaveElements();
     return reduce((value, element) => math.min<num>(value, element));
   }
 
   /// Returns the maximum value.
   /// * The list must have at least one element.
   num max() {
-    assertHasElements();
+    mustHaveElements();
     return reduce((value, element) => math.max<num>(value, element));
   }
 
   /// Returns the mean of the list elements.
   /// * The list must have at least one element.
   num mean() {
-    assertHasElements(n: 1);
+    mustHaveElements();
     return fold<num>(0.0, (sum, element) => sum + element) / length;
   }
 
@@ -224,14 +223,14 @@ extension NumIterableOperators on Iterable<num> {
   ///
   /// The iterable must not be empty.
   num prod() {
-    assertHasElements();
+    mustHaveElements();
     return fold<num>(1, (prod, current) => prod * current);
   }
 
   /// Returns the corrected standard deviation of the list elements.
   /// * The list must have at least two elements.
   num stdDev() {
-    assertHasElements(n: 2);
+    mustHaveMinLength(2);
     final mean = this.mean();
     return math.sqrt(
       fold<num>(0, (sum, element) => sum + math.pow(mean - element, 2)) /
@@ -243,7 +242,7 @@ extension NumIterableOperators on Iterable<num> {
   ///
   /// The iterable must not be empty.
   num sum() {
-    assertHasElements();
+    mustHaveElements();
     return fold<num>(0, (sum, current) => sum + current);
   }
 }

@@ -2,10 +2,8 @@ import 'dart:math';
 
 import 'package:exception_templates/exception_templates.dart';
 
-import '../exceptions/list_length_mismatch.dart';
+import '../exceptions/length_mismatch.dart';
 
-/// Extension on List<num> providing methods for
-/// calculating the Euclidean distance between vectors.
 extension EuclideanMetric on List<num> {
   /// Returns the Euclidean distance between
   /// the origin and `this`.
@@ -17,7 +15,7 @@ extension EuclideanMetric on List<num> {
   /// Throws an error if `this.length != other.length`.
   num distance(List<num> other) {
     if (length != other.length) {
-      throw ErrorOfType<ListLengthMismatch>(
+      throw ErrorOfType<LengthMismatch>(
           message: 'Can\'t calculate distance between $this and $other.',
           invalidState: 'Length of other is: ${other.length}.',
           expectedState: 'The argument \'other\' must have length: $length.');

@@ -1,5 +1,5 @@
 import 'package:exception_templates/exception_templates.dart';
 
-/// Exception indicating that an empty [Iterable] was encountered
-/// when a non-empty [Iterable] was expected.
+/// Exception type indicating that an empty [Iterable] was encountered
+/// when a non-empty one was expected.
 class EmptyIterable extends ExceptionType {}

@@ -1,5 +1,5 @@
-/// Extension providing the method `export`.
-extension ExportListList on List<List<num>> {
+/// Exporting objects of type `List<List<num>>` to a formatted String.
+extension ExportListOfList on List<List<num>> {
   /// Converts an object of type `List<List<num>>` to a `String`.
   /// * `label`: An optional label exported as first row.
   /// * `delimiter`: Delimiter used to separate numerical values.
@@ -41,7 +41,7 @@ extension ExportListList on List<List<num>> {
   }
 }
 
-/// Extension providing the method `export`.
+/// Exporting object of type `List<num>` to a formatted String.
 extension ExportList on List<num> {
   /// Converts an object of type `List<num>` to a `String`.
   /// * `label`: An optional label as first row.
