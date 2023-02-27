@@ -10,8 +10,8 @@ extension SphericalCoordinates on List<num> {
   /// Transforms Polar Spherical coordinates `[r, theta, phi]`
   /// to Cartesian coordiantes `[x. y, z]`.
   /// * `r`: radius, a value larger equal zero.
-  /// * `theta`: the polar angle, a value between 0 and 2*pi.
-  /// * `phi`: the azimuth, a value between 0 and pi.
+  /// * `theta`: the polar angle, a value between 0 and pi.
+  /// * `phi`: the azimuth, a value between 0 and 2*pi.
   List<num> get sphericalToCartesian => [
         this[0] * sin(this[1]) * cos(this[2]),
         this[0] * sin(this[1]) * sin(this[2]),
@@ -46,8 +46,8 @@ extension SphericalCoordinateList on List<List<num>> {
   /// Converts a list of Polar Spherical coordinates `[r, theta, phi]`
   /// to a list of Cartesian coordiantes `[x. y, z]`.
   /// * `r`: radius, a value larger equal zero.
-  /// * `theta`: the polar angle, a value between 0 and 2*pi.
-  /// * `phi`: the azimuth, a value between 0 and pi.
+  /// * `theta`: the polar angle, a value between 0 and pi.
+  /// * `phi`: the azimuth, a value between 0 and 2*pi.
   List<List<num>> get sphericalToCartesian {
     try {
       return List<List<num>>.generate(

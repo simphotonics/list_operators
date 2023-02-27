@@ -1,3 +1,6 @@
+## 0.3.7
+- Amended docs
+
 ## 0.3.6
 - Added the getters `cartesianToSpherical` and
   `sphericalToCartesian` as extension methods on
