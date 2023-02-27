@@ -1,3 +1,8 @@
+## 0.3.6
+- Added the getters `cartesianToSpherical` and
+  `sphericalToCartesian` as extension methods on
+  `List<num>` and `List<List<num>>`.
+
 ## 0.3.5
 
 - Renamed method `toInt()` -> `toListofInt()`.

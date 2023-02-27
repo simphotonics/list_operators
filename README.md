@@ -21,6 +21,10 @@ vector-style operators and methods availabe:
   (a<sub>i</sub> &middot;   b<sub>i</sub>),
 * `a.distance(b)`: distance using an Euclidian metric,
 * `a.distanceFromOrigin()`,
+* `a.sphericalToCartesian`: transforms Polar Spherical coordinates to
+   Cartesian coordinates,
+* `a.cartesianToSpherical`: transforms Cartesian coordinates to Polar
+   Spherical coordinates,
 * `a.equal(b)`: Returns `true` if `a[i] == b[i]` for each index `i`,
 * `a.equalWithinPrecision(b, precision)`: Returns `true` if
  `(a[i] - b[i]) <= precision` for each index `i`.
