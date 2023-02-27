@@ -2,27 +2,27 @@ import 'dart:math';
 
 import 'package:exception_templates/exception_templates.dart';
 
-abstract class IndexOutOfRange extends ErrorType {}
+import '../exceptions/length_mismatch.dart';
 
-/// Converts a list containing three numerical values between
-/// Cartesian coordinates and Polar Spherical coordinates.
+/// Transforms a list containing Cartesian coordinates `[x, y, z]`
+/// to Polar Spherical coordinates `[r, theta, phi]`.
 extension SphericalCoordinates on List<num> {
-  /// Converts Polar Spherical coordinates `[r, theta, phi]`
+  /// Transforms Polar Spherical coordinates `[r, theta, phi]`
   /// to Cartesian coordiantes `[x. y, z]`.
-  /// * `r`: radius, a value larger than zero.
-  /// * `theta`: the polar angle, a value between [0, 2*pi].
-  /// * `phi`: the azimuth, a value between [0, pi].
+  /// * `r`: radius, a value larger equal zero.
+  /// * `theta`: the polar angle, a value between 0 and 2*pi.
+  /// * `phi`: the azimuth, a value between 0 and pi.
   List<num> get sphericalToCartesian => [
         this[0] * sin(this[1]) * cos(this[2]),
         this[0] * sin(this[1]) * sin(this[2]),
         this[0] * cos(this[1]),
       ];
 
-  /// Converts Cartesian coordinates `[x, y, z]`
+  /// Transforms Cartesian coordinates `[x, y, z]`
   /// to Polar Spherical coordinates `[r, theta, phi]`.
   /// * first coordinate: x (the first horizontal coordinate),
   /// * second coordinate: y (the second horizontal coordinate),
-  /// * third coordinate: z (the verical coordinate).
+  /// * third coordinate: z (the vertical coordinate).
   List<num> get cartesianToSpherical {
     if (this[0] == 0 && this[1] == 0) {
       // Origin
@@ -45,9 +45,9 @@ extension SphericalCoordinates on List<num> {
 extension SphericalCoordinateList on List<List<num>> {
   /// Converts a list of Polar Spherical coordinates `[r, theta, phi]`
   /// to a list of Cartesian coordiantes `[x. y, z]`.
-  /// * `r`: radius, a value larger than zero.
-  /// * `theta`: the polar angle, a value between [0, 2*pi].
-  /// * `phi`: the azimuth, a value between [0, pi].
+  /// * `r`: radius, a value larger equal zero.
+  /// * `theta`: the polar angle, a value between 0 and 2*pi.
+  /// * `phi`: the azimuth, a value between 0 and pi.
   List<List<num>> get sphericalToCartesian {
     try {
       return List<List<num>>.generate(
@@ -66,9 +66,10 @@ extension SphericalCoordinateList on List<List<num>> {
   ///
   /// * `[x, y, z]` ->  `[r, theta, phi]`,
   /// * `theta` is the angle between the z-axis and the
-  /// line connecting the origin with the point [x, y, z],
+  /// line connecting the origin with the point `[x, y, z]`,
   /// * `phi` is the angle between the x-axis and the
-  /// line connecting the origin with the projection point of [x, y, z] onto the
+  /// line connecting the origin with the projection point of
+  /// `[x, y, z]` onto the
   /// x-y plane.
   List<List<num>> get cartesianToSpherical {
     try {
