@@ -100,7 +100,6 @@ void main() {
       expect(v.cylindricalToCartesian.cartesianToCylindrical,
           closeToList(v, 1e-12));
     });
-
   });
   group('Errors:', () {
     final coordinates = [
