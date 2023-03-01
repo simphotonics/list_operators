@@ -25,6 +25,10 @@ vector-style operators and methods availabe:
    Cartesian coordinates,
 * `a.cartesianToSpherical`: transforms Cartesian coordinates to Polar
    Spherical coordinates,
+* `a.cartesianToCylindrical`: transforms Cartesian coordinates to Cylindrical
+   coordinates,
+   `a.cylindricalToCartesian`: transforms Cylindrical coordinates to Cartesian
+   coordinates.
 * `a.equal(b)`: Returns `true` if `a[i] == b[i]` for each index `i`,
 * `a.equalWithinPrecision(b, precision)`: Returns `true` if
  `(a[i] - b[i]) <= precision` for each index `i`.

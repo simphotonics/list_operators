@@ -1,3 +1,8 @@
+## 0.3.8
+ Added the getters `cartesianToCylindrical` and
+  `cylindricalToCartesian` as extension methods on
+  `List<num>` and `List<List<num>>`.
+
 ## 0.3.7
 - Amended docs
 

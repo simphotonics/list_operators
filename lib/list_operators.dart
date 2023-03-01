@@ -1,6 +1,7 @@
 export 'src/exceptions/empty_iterable.dart';
 export 'src/exceptions/length_mismatch.dart';
 export 'src/extensions/comparison.dart';
+export 'src/extensions/cylindrical_coordinates.dart';
 export 'src/extensions/double_operators.dart';
 export 'src/extensions/euclidean_metric.dart';
 export 'src/extensions/export.dart';
