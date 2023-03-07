@@ -20,7 +20,7 @@ void main() {
       expect([1, 1].distanceFromOrigin, sqrt(2));
     });
   });
-  group('distance', () {
+  group('Distance Cartesian:', () {
     test('[].distance([])', () {
       expect(<num>[].distance([]), 0);
     });
@@ -37,6 +37,75 @@ void main() {
       expect([1, 0].distance([0, 1]), sqrt(2));
     });
   });
+  group('Distance Spherical:', () {
+    test('[0, 0, 0].distance([0, 0, 0]', () {
+      expect(
+          [0, 0, 0].distance(
+            [0, 0, 0],
+            coordinates: Coordinates.spherical,
+          ),
+          0);
+    });
+    test('[1, 0, 0].distance[0, 0, 0]', () {
+      expect(
+          [1, 0, 0].distance(
+            [0, 0, 0],
+            coordinates: Coordinates.spherical,
+          ),
+          1);
+    });
+    test('[1, 0, 0] -> [1, pi, 0]', () {
+      expect(
+          [1, 0, 0].distance(
+            [1, pi, 0],
+            coordinates: Coordinates.spherical,
+          ),
+          2);
+    });
+    test('orthogonality', () {
+      expect(
+          [1, pi / 2, 0].distance(
+            [1, pi / 2, pi / 2],
+            coordinates: Coordinates.spherical,
+          ),
+          closeTo(sqrt(2), 1e-12));
+    });
+  });
+  group('Distance Cylindrical:', () {
+    test('[0, 0, 0].distance([0, 0, 0]', () {
+      expect(
+          [0, 0, 0].distance(
+            [0, 0, 0],
+            coordinates: Coordinates.cylindrical,
+          ),
+          0);
+    });
+    test('[1, 0, 0].distance[0, 0, 0]', () {
+      expect(
+          [1, 0, 0].distance(
+            [0, 0, 0],
+            coordinates: Coordinates.cylindrical,
+          ),
+          1);
+    });
+    test('[1, 0, 0] -> [1, pi, 0]', () {
+      expect(
+          [1, 0, 0].distance(
+            [1, pi, 0],
+            coordinates: Coordinates.cylindrical,
+          ),
+          2);
+    });
+    test('orthogonality', () {
+      expect(
+          [1, 0, 0].distance(
+            [1, pi / 2, 0],
+            coordinates: Coordinates.cylindrical,
+          ),
+          closeTo(sqrt(2), 1e-12));
+    });
+  });
+
   group('Exceptions', () {
     test('ListLengthMismatch', () {
       try {

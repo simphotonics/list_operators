@@ -1,5 +1,9 @@
+## 0.3.9
+- Extended the function `distance` to work for
+  Spherical and Cylindrical as well as Cartesian coordinates.
+
 ## 0.3.8
- Added the getters `cartesianToCylindrical` and
+ - Added the getters `cartesianToCylindrical` and
   `cylindricalToCartesian` as extension methods on
   `List<num>` and `List<List<num>>`.
 
