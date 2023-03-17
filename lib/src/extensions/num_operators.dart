@@ -183,7 +183,7 @@ extension NumOperators on List<num> {
 
   /// Returns `true` if the inequality
   /// `(this(i) - other(i)).abs() <= precision` holds for each index `i`.
-  bool equalWithinPrecision(List<num> other, {double precision = 1e-12}) {
+  bool match(List<num> other, {double precision = 1e-12}) {
     if (this == other) return true;
     if (length != other.length) return false;
     final it = iterator;
@@ -197,7 +197,7 @@ extension NumOperators on List<num> {
   }
 }
 
-extension NumIterableOperators on Iterable<num> {
+extension NumIterableMethods on Iterable<num> {
   /// Returns the minimum value.
   /// * The list must have at least one element.
   num min() {

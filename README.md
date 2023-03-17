@@ -30,7 +30,7 @@ vector-style operators and methods availabe:
    `a.cylindricalToCartesian`: transforms Cylindrical coordinates to Cartesian
    coordinates.
 * `a.equal(b)`: Returns `true` if `a[i] == b[i]` for each index `i`,
-* `a.equalWithinPrecision(b, precision)`: Returns `true` if
+* `a.match(b, precision)`: Returns `true` if
  `(a[i] - b[i]) <= precision` for each index `i`.
   Note: The corresponding matcher is named
   [`CloseToList`][CloseToList] in analogy with the package [`matcher`][matcher].

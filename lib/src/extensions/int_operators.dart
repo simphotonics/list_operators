@@ -3,6 +3,23 @@ import 'dart:math' as math;
 import 'must_have.dart';
 
 extension IntOperators on List<int> {
+
+  /// Returns a new list consisting of the elements of `this` added to
+  /// the elements of `other`.
+  ///
+  /// Note: The operator `+` is already in use and concatenates two lists.
+  List<int> plus(List<int> other) {
+    mustHaveSameLength(other, operatorSymbol: '+');
+    return List<int>.generate(length, (i) => this[i] + other[i]);
+  }
+
+  /// Returns a new list consisting of the difference of the elements of `this`
+  /// and `other`.
+  List<int> operator -(List<int> other) {
+    mustHaveSameLength(other, operatorSymbol: '-');
+    return List<int>.generate(length, (i) => this[i] - other[i]);
+  }
+
   /// Returns a new list consisting of the absolute value of
   /// the elements of `this`.
   List<int> abs() {
@@ -46,7 +63,7 @@ extension IntOperators on List<int> {
   }
 }
 
-extension IntIterableOperators on Iterable<int> {
+extension IntIterableMethods on Iterable<int> {
   /// Returns the minimum value.
   /// * The list must have at least one element.
   int min() {

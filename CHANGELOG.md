@@ -1,3 +1,7 @@
+## 0.4.0
+- Added operators for `List<int>` and `List<double>`.
+- Renamed `equalWithinPrecision` -> `match`.
+
 ## 0.3.9
 - Extended the function `distance` to work for
   Spherical and Cylindrical as well as Cartesian coordinates.

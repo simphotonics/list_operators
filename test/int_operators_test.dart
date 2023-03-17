@@ -41,6 +41,7 @@ void main() {
     });
     test('plus()', () {
       expect(i1.plus(i2), i2.plus(i1));
+      expect(i1.plus(i2), isA<List<int>>());
       expect(i1.plus(i2), [12, 14, 16]);
     });
     test('pow()', () {
