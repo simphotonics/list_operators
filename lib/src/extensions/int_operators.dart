@@ -3,7 +3,6 @@ import 'dart:math' as math;
 import 'must_have.dart';
 
 extension IntOperators on List<int> {
-
   /// Returns a new list consisting of the elements of `this` added to
   /// the elements of `other`.
   ///
