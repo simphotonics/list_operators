@@ -1,3 +1,7 @@
+## 0.4.1
+- Made extension `NumIterableMethods` generic. Removed redundant extensions
+  for `int` and `double`.
+
 ## 0.4.0
 - Added operators for `List<int>` and `List<double>`.
 - Renamed `equalWithinPrecision` -> `match`.

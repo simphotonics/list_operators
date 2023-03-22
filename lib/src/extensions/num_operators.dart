@@ -10,13 +10,12 @@ extension NumOperators on List<num> {
   List<num> plus(List<num> other) {
     mustHaveSameLength(other, operatorSymbol: '+');
     if (this is List<int> && other is List<int>) {
-      return List<int>.generate(
-          length, (i) => this[i].toInt() + other[i].toInt());
+      return List<int>.generate(length, (i) => (this[i] as int) + other[i]);
     }
-    if (this is List<double> || other is List<double>) {
+    if (other is List<double>) {
       return List<double>.generate(
         length,
-        (i) => this[i].toDouble() + other[i].toDouble(),
+        (i) => this[i] + other[i],
       );
     }
     return List<num>.generate(length, (i) => this[i] + other[i]);
@@ -39,17 +38,17 @@ extension NumOperators on List<num> {
   }
 
   /// Returns a new list with elements multiplied by `scalar` and exponentiated.
-  List<num> exp([num scalar = 1.0]) {
-    return List<double>.generate(length, (i) => math.exp(this[i] * scalar));
-  }
+  List<double> exp([num scalar = 1.0]) => List<double>.generate(
+        length,
+        (i) => math.exp(this[i] * scalar),
+      );
 
   /// Returns a new list consisting of the difference of the elements of `this`
   /// and `other`.
   List<num> operator -(List<num> other) {
     mustHaveSameLength(other, operatorSymbol: '-');
     if (this is List<int> && other is List<int>) {
-      return List<int>.generate(
-          length, (i) => this[i].toInt() - other[i].toInt());
+      return List<int>.generate(length, (i) => (this[i] as int) - other[i]);
     }
     if (this is List<double> || other is List<double>) {
       return List<double>.generate(
@@ -82,11 +81,9 @@ extension NumOperators on List<num> {
   /// multiplied with `scalar`.
   List<num> operator *(num scalar) {
     if (this is List<int> && scalar is int) {
-      return List<int>.generate(
-          length, (i) => this[i].toInt() * scalar.toInt());
+      return List<int>.generate(length, (i) => (this[i] as int) * scalar);
     } else if (this is List<double> || scalar is double) {
-      return List<double>.generate(
-          length, (i) => this[i].toDouble() * scalar.toDouble());
+      return List<double>.generate(length, (i) => (this[i] as double) * scalar);
     }
     return List<num>.generate(length, (i) => this[i] * scalar);
   }
@@ -101,9 +98,9 @@ extension NumOperators on List<num> {
   /// containing the elements of `this` multiplied by -1.
   List<num> operator -() {
     if (this is List<int>) {
-      return List<int>.generate(length, (i) => -this[i].toInt());
+      return List<int>.generate(length, (i) => -(this[i] as int));
     } else if (this is List<double>) {
-      return List<double>.generate(length, (i) => -this[i].toDouble());
+      return List<double>.generate(length, (i) => -(this[i] as double));
     } else {
       return List<num>.generate(length, (i) => -this[i]);
     }
@@ -119,9 +116,9 @@ extension NumOperators on List<num> {
   /// the elements of `this`.
   List<num> abs() {
     if (this is List<int>) {
-      return List<int>.generate(length, (i) => this[i].toInt().abs());
+      return List<int>.generate(length, (i) => (this[i] as int).abs());
     } else if (this is List<double>) {
-      return List<double>.generate(length, (i) => this[i].toDouble().abs());
+      return List<double>.generate(length, (i) => (this[i] as double).abs());
     } else {
       return List<num>.generate(length, (i) => this[i].abs());
     }
@@ -173,7 +170,7 @@ extension NumOperators on List<num> {
 
   /// Returns a new list containing the elements of `this` converted to `int`.
   List<int> toListOfInt() {
-    return List<int>.generate(length, (i) => this[i].toInt());
+    return List<int>.generate(length, (i) => this[i].round());
   }
 
   /// Returns a new list containing the elements of `this` converted to `double`.
@@ -197,52 +194,54 @@ extension NumOperators on List<num> {
   }
 }
 
-extension NumIterableMethods on Iterable<num> {
+extension NumIterableMethods<T extends num> on Iterable<T> {
   /// Returns the minimum value.
   /// * The list must have at least one element.
-  num min() {
+  T min() {
     mustHaveElements();
-    return reduce((value, element) => math.min<num>(value, element));
+    return reduce((value, element) => math.min(value, element));
   }
 
   /// Returns the maximum value.
   /// * The list must have at least one element.
-  num max() {
+  T max() {
     mustHaveElements();
-    return reduce((value, element) => math.max<num>(value, element));
-  }
-
-  /// Returns the mean of the list elements.
-  /// * The list must have at least one element.
-  num mean() {
-    mustHaveElements();
-    return fold<num>(0.0, (sum, element) => sum + element) / length;
-  }
-
-  /// Returns the product of the entries.
-  ///
-  /// The iterable must not be empty.
-  num prod() {
-    mustHaveElements();
-    return fold<num>(1, (prod, current) => prod * current);
-  }
-
-  /// Returns the corrected standard deviation of the list elements.
-  /// * The list must have at least two elements.
-  num stdDev() {
-    mustHaveMinLength(2);
-    final mean = this.mean();
-    return math.sqrt(
-      fold<num>(0, (sum, element) => sum + math.pow(mean - element, 2)) /
-          (length - 1),
-    );
+    return reduce((value, element) => math.max(value, element));
   }
 
   /// Returns the sum of the entries.
   ///
   /// The iterable must not be empty.
-  num sum() {
+  T sum() {
     mustHaveElements();
-    return fold<num>(0, (sum, current) => sum + current);
+    return reduce((value, current) => (value + current) as T);
+  }
+
+  /// Returns the mean of the list elements.
+  /// * The list must have at least one element.
+  double mean() {
+    mustHaveElements();
+    return sum() / length;
+  }
+
+  /// Returns the product of the entries.
+  ///
+  /// The iterable must not be empty.
+  T prod() {
+    mustHaveElements();
+    return reduce((value, current) => (value * current) as T);
+  }
+
+  /// Returns the corrected standard deviation of the list elements.
+  /// * The list must have at least two elements.
+  double stdDev() {
+    mustHaveMinLength(2);
+    final mean = this.mean();
+    double sum = 0.0;
+    final it = iterator;
+    while (it.moveNext()) {
+      sum += math.pow(mean - it.current, 2);
+    }
+    return math.sqrt(sum / (length - 1));
   }
 }

@@ -1,5 +1,3 @@
-import 'dart:math' as math;
-
 import 'must_have.dart';
 
 extension IntOperators on List<int> {
@@ -59,37 +57,5 @@ extension IntOperators on List<int> {
       sum += this[i] * other[i];
     }
     return sum;
-  }
-}
-
-extension IntIterableMethods on Iterable<int> {
-  /// Returns the minimum value.
-  /// * The list must have at least one element.
-  int min() {
-    mustHaveElements();
-    return reduce((value, element) => math.min(value, element));
-  }
-
-  /// Returns the maximum value.
-  /// * The list must have at least one element.
-  int max() {
-    mustHaveElements();
-    return reduce((value, element) => math.max(value, element));
-  }
-
-  /// Returns the sum of the entries.
-  ///
-  /// The iterable must not be empty.
-  int sum() {
-    mustHaveElements();
-    return fold<int>(0, (sum, current) => sum + current);
-  }
-
-  /// Returns the product of the entries.
-  ///
-  /// The iterable must not be empty.
-  int prod() {
-    mustHaveElements();
-    return fold<int>(1, (prod, current) => prod * current);
   }
 }

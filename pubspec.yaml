@@ -3,7 +3,7 @@ name: list_operators
 description: Extensions providing vector-style operators and methods for Dart
   lists and iterables.
 
-version: 0.4.0
+version: 0.4.1
 
 homepage: https://github.com/simphotonics/list_operators
 
