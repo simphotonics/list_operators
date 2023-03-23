@@ -15,8 +15,12 @@ extension NumOperators on List<num> {
     if (other is List<double>) {
       return List<double>.generate(
         length,
-        (i) => this[i] + other[i],
+        (i) => other[i] + this[i],
       );
+    }
+    if (this is List<double>) {
+      return List<double>.generate(
+          length, (i) => (this[i] as double) + other[i]);
     }
     return List<num>.generate(length, (i) => this[i] + other[i]);
   }
@@ -50,11 +54,14 @@ extension NumOperators on List<num> {
     if (this is List<int> && other is List<int>) {
       return List<int>.generate(length, (i) => (this[i] as int) - other[i]);
     }
-    if (this is List<double> || other is List<double>) {
+    if (this is List<double>) {
       return List<double>.generate(
         length,
-        (i) => this[i].toDouble() - other[i].toDouble(),
+        (i) => this[i].toDouble() - other[i],
       );
+    }
+    if (other is List<double>) {
+      return List<double>.generate(length, (i) => this[i] - other[i]);
     }
     return List<num>.generate(length, (i) => this[i] - other[i]);
   }
@@ -83,7 +90,7 @@ extension NumOperators on List<num> {
     if (this is List<int> && scalar is int) {
       return List<int>.generate(length, (i) => (this[i] as int) * scalar);
     } else if (this is List<double> || scalar is double) {
-      return List<double>.generate(length, (i) => (this[i] as double) * scalar);
+      return List<double>.generate(length, (i) => this[i].toDouble() * scalar);
     }
     return List<num>.generate(length, (i) => this[i] * scalar);
   }
@@ -168,14 +175,14 @@ extension NumOperators on List<num> {
     return true;
   }
 
-  /// Returns a new list containing the elements of `this` converted to `int`.
+  /// Returns a new list containing the elements of `this` rounded to [int].
   List<int> toListOfInt() {
     return List<int>.generate(length, (i) => this[i].round());
   }
 
-  /// Returns a new list containing the elements of `this` converted to `double`.
+  /// Returns a new list containing the elements of `this` rounded to [double].
   List<double> toListOfDouble() {
-    return List<double>.generate(length, (i) => this[i].toDouble());
+    return List<double>.generate(length, (i) => this[i].roundToDouble());
   }
 
   /// Returns `true` if the inequality

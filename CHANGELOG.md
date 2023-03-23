@@ -1,3 +1,6 @@
+## 0.4.2
+- Updated extension `NumOperators`.
+
 ## 0.4.1
 - Made extension `NumIterableMethods` generic. Removed redundant extensions
   for `int` and `double`.
