@@ -1,3 +1,6 @@
+## 0.4.3
+- Updated dev_dependencies.
+
 ## 0.4.2
 - Updated extension `NumOperators`.
 
