@@ -1,3 +1,6 @@
+## 0.5.0
+- Updated dependencies. Min. Dart version is now 3.0.0. 
+
 ## 0.4.3
 - Updated dev_dependencies.
 
