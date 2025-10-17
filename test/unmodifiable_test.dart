@@ -1,44 +1,47 @@
-import 'dart:collection';
-
 import 'package:test/test.dart';
 
 import 'package:list_operators/list_operators.dart';
 
 void main() {
-  final i1 = [1, 2, 3];
-  final i2 = [i1];
-  final u1 = UnmodifiableListView(i1);
-  final u2 = UnmodifiableListView([u1]);
+  final list = [1, 2, 3];
+  final nestedList = [list];
+  final unmodifiableList = List<int>.unmodifiable(list);
+  final unmodifiableNestedList = List<List<int>>.unmodifiable([
+    unmodifiableList,
+  ]);
 
   group('Unmodifiable:', () {
     test('value', () {
-      expect(i1.unmodifiable, i1);
+      expect(list.unmodifiable, list);
     });
     test('type', () {
-      expect(i1.unmodifiable.runtimeType, u1.runtimeType);
+      expect(list.unmodifiable.runtimeType, unmodifiableList.runtimeType);
     });
   });
 
   group('RecursiveUnmodifiable:', () {
     test('value', () {
-      expect(i2.unmodifiable, i2);
+      expect(nestedList.unmodifiable, unmodifiableNestedList);
     });
     test('type', () {
-      expect(i2.unmodifiable.runtimeType, u2.runtimeType);
+      expect(
+        nestedList.unmodifiable.runtimeType,
+        unmodifiableNestedList.runtimeType,
+      );
     });
   });
 
   group('Errors', () {
     test('Adding elements to list', () {
       try {
-        u1.add(999);
+        unmodifiableList.add(999);
       } catch (e) {
         expect(e.runtimeType, UnsupportedError);
       }
     });
     test('Adding elements to inner list', () {
       try {
-        u2.first.add(999);
+        unmodifiableNestedList.first.add(999);
       } catch (e) {
         expect(e.runtimeType, UnsupportedError);
       }
