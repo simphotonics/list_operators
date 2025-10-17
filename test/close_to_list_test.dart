@@ -1,11 +1,7 @@
 import 'package:list_operators/list_operators.dart';
 import 'package:test/test.dart' show test, group, expect, TestFailure;
 
-void expectToFail(
-  dynamic actual,
-  dynamic matcher, {
-  String failMessage = '',
-}) {
+void expectToFail(dynamic actual, dynamic matcher, {String failMessage = ''}) {
   try {
     expect(actual, matcher);
   } on TestFailure catch (exception) {
@@ -19,13 +15,17 @@ void main() {
       final i1 = [101, 102];
       final i2 = [111, 103];
       final delta = 2;
-      expectToFail(i1, closeToList(i2, delta),
-          failMessage: 'Expected: a numerical iterable differing from '
-              '[111, 103] by less than <$delta>\n'
-              '  Actual: [101, 102]\n'
-              '   Which: at position \'0\' has value <101> which is outside'
-              ' the valid range [109, 113].\n'
-              '');
+      expectToFail(
+        i1,
+        closeToList(i2, delta),
+        failMessage:
+            'Expected: a numerical iterable differing from '
+            '[111, 103] by less than <$delta>\n'
+            '  Actual: [101, 102]\n'
+            '   Which: at position \'0\' has value <101> which is outside'
+            ' the valid range [109, 113].\n'
+            '',
+      );
     });
     test('Iterable<double>', () {
       final d1 = [101, 102];
@@ -47,7 +47,8 @@ void main() {
       expectToFail(
         [99],
         closeToList([99], double.nan),
-        failMessage: 'Expected: a numerical iterable differing from '
+        failMessage:
+            'Expected: a numerical iterable differing from '
             '[99] by less than <NaN>\n'
             '  Actual: [99]\n'
             '   Which: at position \'0\' has value <99> which is outside '

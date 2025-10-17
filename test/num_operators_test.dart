@@ -249,8 +249,10 @@ void main() {
       try {
         [0, 1].distance([1, 3, 4]);
       } on ErrorOfType<LengthMismatch> catch (e) {
-        expect(e.message,
-            'Can\'t calculate distance between [0, 1] and [1, 3, 4].');
+        expect(
+          e.message,
+          'Can\'t calculate distance between [0, 1] and [1, 3, 4].',
+        );
       }
     });
   });

@@ -13,14 +13,13 @@ extension NumOperators on List<num> {
       return List<int>.generate(length, (i) => (this[i] as int) + other[i]);
     }
     if (other is List<double>) {
-      return List<double>.generate(
-        length,
-        (i) => other[i] + this[i],
-      );
+      return List<double>.generate(length, (i) => other[i] + this[i]);
     }
     if (this is List<double>) {
       return List<double>.generate(
-          length, (i) => (this[i] as double) + other[i]);
+        length,
+        (i) => (this[i] as double) + other[i],
+      );
     }
     return List<num>.generate(length, (i) => this[i] + other[i]);
   }
@@ -42,10 +41,8 @@ extension NumOperators on List<num> {
   }
 
   /// Returns a new list with elements multiplied by `scalar` and exponentiated.
-  List<double> exp([num scalar = 1.0]) => List<double>.generate(
-        length,
-        (i) => math.exp(this[i] * scalar),
-      );
+  List<double> exp([num scalar = 1.0]) =>
+      List<double>.generate(length, (i) => math.exp(this[i] * scalar));
 
   /// Returns a new list consisting of the difference of the elements of `this`
   /// and `other`.
@@ -96,10 +93,8 @@ extension NumOperators on List<num> {
   }
 
   /// Returns a new list containing the elements of `this` divided by `scalar`.
-  List<double> operator /(num scalar) => List<double>.generate(
-        length,
-        (i) => this[i] / scalar,
-      );
+  List<double> operator /(num scalar) =>
+      List<double>.generate(length, (i) => this[i] / scalar);
 
   /// Unary operator: Returns a new list
   /// containing the elements of `this` multiplied by -1.

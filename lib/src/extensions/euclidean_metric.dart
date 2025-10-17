@@ -41,24 +41,29 @@ extension EuclideanMetric on List<num> {
           }
           return sqrt(result);
         case Coordinates.spherical:
-          return sqrt(pow(this[0], 2) +
-              pow(other[0], 2) -
-              2 *
-                  this[0] *
-                  other[0] *
-                  (sin(this[1]) * sin(other[1]) * cos(this[2] - other[2]) +
-                      cos(this[1]) * cos(other[1])));
+          return sqrt(
+            pow(this[0], 2) +
+                pow(other[0], 2) -
+                2 *
+                    this[0] *
+                    other[0] *
+                    (sin(this[1]) * sin(other[1]) * cos(this[2] - other[2]) +
+                        cos(this[1]) * cos(other[1])),
+          );
         case Coordinates.cylindrical:
-          return sqrt(pow(this[0], 2) +
-              pow(other[0], 2) -
-              2 * this[0] * other[0] * cos(this[1] + other[1]) +
-              pow(this[2] - other[2], 2));
+          return sqrt(
+            pow(this[0], 2) +
+                pow(other[0], 2) -
+                2 * this[0] * other[0] * cos(this[1] + other[1]) +
+                pow(this[2] - other[2], 2),
+          );
       }
     } on RangeError catch (_) {
       throw ErrorOfType<LengthMismatch>(
-          message: 'Can\'t calculate distance between $this and $other.',
-          invalidState: 'Length of other is: ${other.length}.',
-          expectedState: 'The argument \'other\' must have length: $length.');
+        message: 'Can\'t calculate distance between $this and $other.',
+        invalidState: 'Length of other is: ${other.length}.',
+        expectedState: 'The argument \'other\' must have length: $length.',
+      );
     }
   }
 }

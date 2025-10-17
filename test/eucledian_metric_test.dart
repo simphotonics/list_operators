@@ -40,69 +40,61 @@ void main() {
   group('Distance Spherical:', () {
     test('[0, 0, 0].distance([0, 0, 0]', () {
       expect(
-          [0, 0, 0].distance(
-            [0, 0, 0],
-            coordinates: Coordinates.spherical,
-          ),
-          0);
+        [0, 0, 0].distance([0, 0, 0], coordinates: Coordinates.spherical),
+        0,
+      );
     });
     test('[1, 0, 0].distance[0, 0, 0]', () {
       expect(
-          [1, 0, 0].distance(
-            [0, 0, 0],
-            coordinates: Coordinates.spherical,
-          ),
-          1);
+        [1, 0, 0].distance([0, 0, 0], coordinates: Coordinates.spherical),
+        1,
+      );
     });
     test('[1, 0, 0] -> [1, pi, 0]', () {
       expect(
-          [1, 0, 0].distance(
-            [1, pi, 0],
-            coordinates: Coordinates.spherical,
-          ),
-          2);
+        [1, 0, 0].distance([1, pi, 0], coordinates: Coordinates.spherical),
+        2,
+      );
     });
     test('orthogonality', () {
       expect(
-          [1, pi / 2, 0].distance(
-            [1, pi / 2, pi / 2],
-            coordinates: Coordinates.spherical,
-          ),
-          closeTo(sqrt(2), 1e-12));
+        [
+          1,
+          pi / 2,
+          0,
+        ].distance([1, pi / 2, pi / 2], coordinates: Coordinates.spherical),
+        closeTo(sqrt(2), 1e-12),
+      );
     });
   });
   group('Distance Cylindrical:', () {
     test('[0, 0, 0].distance([0, 0, 0]', () {
       expect(
-          [0, 0, 0].distance(
-            [0, 0, 0],
-            coordinates: Coordinates.cylindrical,
-          ),
-          0);
+        [0, 0, 0].distance([0, 0, 0], coordinates: Coordinates.cylindrical),
+        0,
+      );
     });
     test('[1, 0, 0].distance[0, 0, 0]', () {
       expect(
-          [1, 0, 0].distance(
-            [0, 0, 0],
-            coordinates: Coordinates.cylindrical,
-          ),
-          1);
+        [1, 0, 0].distance([0, 0, 0], coordinates: Coordinates.cylindrical),
+        1,
+      );
     });
     test('[1, 0, 0] -> [1, pi, 0]', () {
       expect(
-          [1, 0, 0].distance(
-            [1, pi, 0],
-            coordinates: Coordinates.cylindrical,
-          ),
-          2);
+        [1, 0, 0].distance([1, pi, 0], coordinates: Coordinates.cylindrical),
+        2,
+      );
     });
     test('orthogonality', () {
       expect(
-          [1, 0, 0].distance(
-            [1, pi / 2, 0],
-            coordinates: Coordinates.cylindrical,
-          ),
-          closeTo(sqrt(2), 1e-12));
+        [
+          1,
+          0,
+          0,
+        ].distance([1, pi / 2, 0], coordinates: Coordinates.cylindrical),
+        closeTo(sqrt(2), 1e-12),
+      );
     });
   });
 
@@ -111,8 +103,10 @@ void main() {
       try {
         [0, 1].distance([1, 3, 4]);
       } on ErrorOfType<LengthMismatch> catch (e) {
-        expect(e.message,
-            'Can\'t calculate distance between [0, 1] and [1, 3, 4].');
+        expect(
+          e.message,
+          'Can\'t calculate distance between [0, 1] and [1, 3, 4].',
+        );
       }
     });
   });

@@ -12,9 +12,10 @@ extension MustHave on Iterable {
   void mustHaveSameLength(Iterable other, {String operatorSymbol = ''}) {
     if (length != other.length) {
       throw ErrorOfType<LengthMismatch>(
-          message: 'Error using \'$operatorSymbol\' with $runtimeType.',
-          invalidState: 'Length of $this does not match length of $other.',
-          expectedState: 'Two lists with the same length.');
+        message: 'Error using \'$operatorSymbol\' with $runtimeType.',
+        invalidState: 'Length of $this does not match length of $other.',
+        expectedState: 'Two lists with the same length.',
+      );
     }
   }
 
@@ -24,8 +25,9 @@ extension MustHave on Iterable {
     if (this is List) {
       if (length < n) {
         throw ErrorOfType<LengthMismatch>(
-            message: 'List contain at least $n elements.',
-            invalidState: '$this has only $length elements.');
+          message: 'List contain at least $n elements.',
+          invalidState: '$this has only $length elements.',
+        );
       }
     } else {
       // Avoid calling length on a potentially long iterable.
@@ -36,8 +38,9 @@ extension MustHave on Iterable {
       }
       if (i == n) return;
       throw ErrorOfType<LengthMismatch>(
-          message: 'Iterable must contain at least $n elements.',
-          invalidState: '$this has only $i elements.');
+        message: 'Iterable must contain at least $n elements.',
+        invalidState: '$this has only $i elements.',
+      );
     }
   }
 

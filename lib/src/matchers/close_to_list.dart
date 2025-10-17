@@ -92,8 +92,11 @@ class CloseToList<T extends num> extends Matcher {
     final actualAtPosition = matchState['actualAtPosition'];
 
     return mismatchDescription
-        .add('at position \'$position\' has value <$actualAtPosition> '
-            'which is outside the valid range ')
-        .addDescriptionOf([left, right]).add('.');
+        .add(
+          'at position \'$position\' has value <$actualAtPosition> '
+          'which is outside the valid range ',
+        )
+        .addDescriptionOf([left, right])
+        .add('.');
   }
 }

@@ -19,8 +19,10 @@ void main() {
         a.mustHaveSameLength(b, operatorSymbol: '-');
       } catch (e) {
         expect(e, isA<ErrorOfType<LengthMismatch>>());
-        expect((e as ErrorOfType).invalidState,
-            'Length of $a does not match length of $b.');
+        expect(
+          (e as ErrorOfType).invalidState,
+          'Length of $a does not match length of $b.',
+        );
       }
     });
   });
@@ -32,18 +34,17 @@ void main() {
         q.mustHaveMinLength(10);
       } catch (e) {
         expect(e, isA<ErrorOfType<LengthMismatch>>());
-        expect((e as ErrorOfType).invalidState,
-            '$q has only ${q.length} elements.');
+        expect(
+          (e as ErrorOfType).invalidState,
+          '$q has only ${q.length} elements.',
+        );
       }
     });
     test('Iterable checking n.', () {
-      expect(
-        () {
-          q.mustHaveMinLength(5);
-          throw ('Call above must not throw!');
-        },
-        throwsA(isA<String>()),
-      );
+      expect(() {
+        q.mustHaveMinLength(5);
+        throw ('Call above must not throw!');
+      }, throwsA(isA<String>()));
     });
 
     test('List', () {
@@ -53,8 +54,10 @@ void main() {
         a.mustHaveSameLength(b, operatorSymbol: '-');
       } catch (e) {
         expect(e, isA<ErrorOfType<LengthMismatch>>());
-        expect((e as ErrorOfType).invalidState,
-            'Length of $a does not match length of $b.');
+        expect(
+          (e as ErrorOfType).invalidState,
+          'Length of $a does not match length of $b.',
+        );
       }
     });
   });

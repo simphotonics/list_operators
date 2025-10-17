@@ -108,7 +108,7 @@ void main() {
   print(a + b);
   print('');
 
-  // Creating an unmodifiable list view (recursively)
+  // Creating an unmodifiable list (recursively)
   print('\nCreating an unmodifiable list of an object of type List<List<T>>:');
   final list = [
     ['one'],
@@ -116,10 +116,10 @@ void main() {
   ];
 
   // Extension works for objects of type List<T> and List<List<T>>
-  final listView = list.unmodifiable;
+  final listUnmodifiable = list.unmodifiable;
 
-  // Prints: UnmodifiableListView<UnmodifiableListView<String>>
-  print(listView.runtimeType);
+  // Prints: List<List<String>>
+  print(listUnmodifiable.runtimeType);
 }
 ```
 <details><summary> Click to show console output.</summary>
@@ -158,7 +158,7 @@ Concatenation:
 [1, 2, 3, 11, 12, 13]
 
 Creating an unmodifiable list of an object of type List<List<T>>:
-UnmodifiableListView<UnmodifiableListView<String>>
+List<List<String>>
 ```
 </details><br/>
 

@@ -13,10 +13,10 @@ extension SphericalCoordinates on List<num> {
   /// * `theta`: the polar angle, a value between 0 and pi.
   /// * `phi`: the azimuth, a value between 0 and 2*pi.
   List<num> get sphericalToCartesian => [
-        this[0] * sin(this[1]) * cos(this[2]),
-        this[0] * sin(this[1]) * sin(this[2]),
-        this[0] * cos(this[1]),
-      ];
+    this[0] * sin(this[1]) * cos(this[2]),
+    this[0] * sin(this[1]) * sin(this[2]),
+    this[0] * cos(this[1]),
+  ];
 
   /// Transforms Cartesian coordinates `[x, y, z]`
   /// to Polar Spherical coordinates `[r, theta, phi]`.
@@ -51,13 +51,17 @@ extension SphericalCoordinateList on List<List<num>> {
   List<List<num>> get sphericalToCartesian {
     try {
       return List<List<num>>.generate(
-          length, (index) => this[index].sphericalToCartesian);
+        length,
+        (index) => this[index].sphericalToCartesian,
+      );
     } on RangeError catch (e, _) {
       throw ErrorOfType<IndexOutOfRange>(
-          message: 'Error in getter <sphericalToCartesian>.',
-          invalidState: 'Could not access list '
-              'element with index:<${e.invalidValue}>.',
-          expectedState: 'A set of coordinates as a List<num> with length 3.');
+        message: 'Error in getter <sphericalToCartesian>.',
+        invalidState:
+            'Could not access list '
+            'element with index:<${e.invalidValue}>.',
+        expectedState: 'A set of coordinates as a List<num> with length 3.',
+      );
     }
   }
 
@@ -74,13 +78,17 @@ extension SphericalCoordinateList on List<List<num>> {
   List<List<num>> get cartesianToSpherical {
     try {
       return List<List<num>>.generate(
-          length, (index) => this[index].cartesianToSpherical);
+        length,
+        (index) => this[index].cartesianToSpherical,
+      );
     } on RangeError catch (e, _) {
       throw ErrorOfType<IndexOutOfRange>(
-          message: 'Error in getter <cartesianToSpherical>.',
-          invalidState: 'Could not access list '
-              'element with index:<${e.invalidValue}>.',
-          expectedState: 'A set of coordinates as a List<num> with length 3.');
+        message: 'Error in getter <cartesianToSpherical>.',
+        invalidState:
+            'Could not access list '
+            'element with index:<${e.invalidValue}>.',
+        expectedState: 'A set of coordinates as a List<num> with length 3.',
+      );
     }
   }
 }

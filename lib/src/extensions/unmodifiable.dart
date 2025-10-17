@@ -1,16 +1,12 @@
-import 'dart:collection' show UnmodifiableListView;
-
 extension Unmodifiable<T> on List<T> {
-  /// Returns an unmodifiable list view of this.
-  UnmodifiableListView<T> get unmodifiable => UnmodifiableListView(this);
+  /// Returns an unmodifiable list containing the elements of this.
+  List<T> get unmodifiable => List<T>.unmodifiable(this);
 }
 
 extension RecursiveUnmodifiable<T> on List<List<T>> {
-  /// Returns an unmodifiable list view of `this`.
-  ///
-  /// Note: The inner lists are also unmodifiable.
-  UnmodifiableListView<UnmodifiableListView<T>> get unmodifiable =>
-      UnmodifiableListView<UnmodifiableListView<T>>(
-          List<UnmodifiableListView<T>>.generate(
-              length, (i) => UnmodifiableListView(this[i])));
+  /// Returns an unmodifiable list containing the elements of List that are
+  /// also unmodifiable.
+  List<List<T>> get unmodifiable => List<List<T>>.unmodifiable([
+    for (final list in this) List<T>.unmodifiable(list),
+  ]);
 }

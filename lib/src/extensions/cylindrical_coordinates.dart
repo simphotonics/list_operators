@@ -10,8 +10,11 @@ extension CylindricalCoordinates on List<num> {
   /// * `rho`: radius, a value larger equal zero.
   /// * `phi`: azimuth, a value between 0 and 2*pi.
   /// * `z`: vertical coordinate.
-  List<num> get cylindricalToCartesian =>
-      [this[0] * cos(this[1]), this[0] * sin(this[1]), this[2]];
+  List<num> get cylindricalToCartesian => [
+    this[0] * cos(this[1]),
+    this[0] * sin(this[1]),
+    this[2],
+  ];
 
   /// Transforms Cartesian coordinates `[x, y, z]`
   /// to Cylindrical coordinates `[rho, phi, z]`.
@@ -59,13 +62,17 @@ extension CylindricalCoordinateList on List<List<num>> {
   List<List<num>> get cylindricalToCartesian {
     try {
       return List<List<num>>.generate(
-          length, (index) => this[index].cylindricalToCartesian);
+        length,
+        (index) => this[index].cylindricalToCartesian,
+      );
     } on RangeError catch (e, _) {
       throw ErrorOfType<IndexOutOfRange>(
-          message: 'Error in getter <cylindricalToCartesian>.',
-          invalidState: 'Could not access list '
-              'element with index:<${e.invalidValue}>.',
-          expectedState: 'A set of coordinates as a List<num> with length 3.');
+        message: 'Error in getter <cylindricalToCartesian>.',
+        invalidState:
+            'Could not access list '
+            'element with index:<${e.invalidValue}>.',
+        expectedState: 'A set of coordinates as a List<num> with length 3.',
+      );
     }
   }
 
@@ -78,13 +85,17 @@ extension CylindricalCoordinateList on List<List<num>> {
   List<List<num>> get cartesianToCylindrical {
     try {
       return List<List<num>>.generate(
-          length, (index) => this[index].cartesianToCylindrical);
+        length,
+        (index) => this[index].cartesianToCylindrical,
+      );
     } on RangeError catch (e, _) {
       throw ErrorOfType<IndexOutOfRange>(
-          message: 'Error in getter <cartesianToCylindrical>.',
-          invalidState: 'Could not access list '
-              'element with index:<${e.invalidValue}>.',
-          expectedState: 'A set of coordinates as a List<num> with length 3.');
+        message: 'Error in getter <cartesianToCylindrical>.',
+        invalidState:
+            'Could not access list '
+            'element with index:<${e.invalidValue}>.',
+        expectedState: 'A set of coordinates as a List<num> with length 3.',
+      );
     }
   }
 }

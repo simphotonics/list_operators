@@ -1,5 +1,11 @@
+## 0.5.1
+- Updated dependencies
+- Extension getter `unmodifiable` on `List<T>` and `List<List<T>>`
+  now returns an unmodifiable list (in prev. versions
+  it used to return an unmodifiable list view).
+
 ## 0.5.0
-- Updated dependencies. Min. Dart version is now 3.0.0. 
+- Updated dependencies. Min. Dart version is now 3.0.0.
 
 ## 0.4.3
 - Updated dev_dependencies.
