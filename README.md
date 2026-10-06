@@ -3,11 +3,15 @@
 
 ## Introduction
 The package [`list_operators`][list_operators] uses Dart Extensions to provide
-*operators* and *utility methods* for objects of type `List` and `Iterable`.
-Note: The operators and methods listed below are *generative* in the sense that they
-return a new object. For example the unary negation operator `-a` applied to
-a list `a` returns a new list and does not modify the elements of `a` in place.
+*operators* and *utility methods* for objects of type [List][List] and
+[Iterable][Iterable].
 
+Note: The operators and methods listed below are *generative*
+in the sense that they
+return a new object.
+For example the unary negation operator `-a` applied to
+a list `a` returns a new list and does not modify the
+elements of `a` in place.
 
 Extensions on `List<T extends num>` make the following
 vector-style operators and methods availabe:
@@ -19,16 +23,6 @@ vector-style operators and methods availabe:
 * `a.plus(b)`: addition, element by element,
 * `a.innerProd(b)`: the inner product &Sigma;<sub>i</sub>
   (a<sub>i</sub> &middot;   b<sub>i</sub>),
-* `a.distance(b)`: distance using an Euclidian metric,
-* `a.distanceFromOrigin()`,
-* `a.sphericalToCartesian`: transforms Polar Spherical coordinates to
-   Cartesian coordinates,
-* `a.cartesianToSpherical`: transforms Cartesian coordinates to Polar
-   Spherical coordinates,
-* `a.cartesianToCylindrical`: transforms Cartesian coordinates to Cylindrical
-   coordinates,
-   `a.cylindricalToCartesian`: transforms Cylindrical coordinates to Cartesian
-   coordinates.
 * `a.equal(b)`: Returns `true` if `a[i] == b[i]` for each index `i`,
 * `a.match(b, precision)`: Returns `true` if
  `(a[i] - b[i]) <= precision` for each index `i`.
@@ -48,12 +42,13 @@ the following methods are provided:
  * `a.prod()`: product of all elements.
 
 For objects of type `List<T extends Comparable>` the library introduces the
-comparison operators `a < b, a <= b,  a > b, a >= b`.
+comparison operators `<`, `<=` , `>` , and `>=`.
 
 
 ## Usage
 Include [`list_operatos`][list_operators] as a `dependency`
 in your `pubspec.yaml` file.
+
 The programs below demonstrates how to use operators and
 methods defined by the library `list_operators`.
 
@@ -95,21 +90,13 @@ void main() {
   print(a.exp(2));
   print('');
 
-  print('b.distanceFromOrigin()');
-  print(b.distanceFromOrigin);
-  print('');
-
-  print('b.distance(a)');
-  print(b.distance(a));
-  print('');
-
   /// Dart built-in operator:
-  print('Concatenation:');
+  print('Concatenation (using Dart\'s buit-in operator "+"):');
   print(a + b);
   print('');
 
   // Creating an unmodifiable list (recursively)
-  print('\nCreating an unmodifiable list of an object of type List<List<T>>:');
+  print('\nCreating an unmodifiable list of an object of type List<List<String>>:');
   final list = [
     ['one'],
     ['two'],
@@ -147,12 +134,6 @@ Power
 Exponentiation
 [2.718281828459045, 7.38905609893065, 20.085536923187668]
 [7.38905609893065, 54.598150033144236, 403.4287934927351]
-
-b.distanceFromOrigin()
-20.83266665599966
-
-b.distance(a)
-17.320508075688775
 
 Concatenation:
 [1, 2, 3, 11, 12, 13]
@@ -222,10 +203,10 @@ Sum: b.sum()
 
 </details><br/>
 
-#### Operators For Objects of Type List\<T extends Comparable\>:
+#### Operators For Objects of Type Iterable\<T extends Comparable\>:
 
 ```Dart
-import 'package:list_operators/list_operators.dart';
+import 'package:list_operators/iterable_operators.dart';
 
 void main() {
   final a = [1, 2, 3];
@@ -340,15 +321,16 @@ Inner lists are exported as columns.
 
 In its current version, Dart does not support function
 (and implicitly operator) overloading.
-For this reason some numerical operations introduced by [`list_operators`][list_operators]
+For this reason some numerical operations
+introduced by [`list_operators`][list_operators]
 are not symmetrical, even though intuitively they should be:
 - The expression `[1, 2, 3] * 10` is well defined and the result is `[10, 20, 30]`.
 - The expression `10 * [1, 2, 3]` is not defined since the operator `*`
   for objects of type `int` expects a second operand of type `num`.
 
 Note: The `+` operator (concatenates two lists) is already
-defined by Dart's abstract class [`List`][List] and cannot be overridden by an extension on [`List`][List].
-To add two numerical lists element by element use the method: `List<num> plus(List<num> other)`.
+defined by Dart's abstract class [`List`][List] and cannot be overridden by
+an extension on [`List`][List]. To add two numerical lists element by element use the method: `List<num> plus(List<num> other)`.
 
 ## Examples
 
