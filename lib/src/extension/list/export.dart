@@ -1,11 +1,11 @@
 /// Exports objects of type `List<List<num>>` as a formatted String.
 extension ExportListOfList on List<List<num>> {
-  /// Converts an object of type `List<List<num>>` to a `String`.
-  /// * `label`: An optional label exported as first row.
-  /// * `delimiter`: Delimiter used to separate numerical values.
-  /// * `precision`: Precision used when converting numbers to `String`.
-  /// * `flip`: By default inner lists are exported as rows.
-  ///    Set `flip` to `true` to export inner lists as columns.
+  /// Converts an object of type `List<List<num>>` to a [String].
+  /// * [label]: An optional label exported as first row.
+  /// * [delimiter]: Delimiter used to separate numerical values.
+  /// * [precision]: Precision used when converting numbers to `String`.
+  /// * [flip]:  By default inner lists are exported as rows.
+  ///    Set [flip] to `true` to export inner lists as columns.
   String export({
     String label = '',
     String delimiter = ' ',
@@ -41,12 +41,11 @@ extension ExportListOfList on List<List<num>> {
   }
 }
 
-/// Exports objects of type `List<num>` as a formatted String.
 extension ExportList on List<num> {
-  /// Converts an object of type `List<num>` to a `String`.
-  /// * `label`: An optional label as first row.
-  /// * `delimiter`: Delimiter used to separate numerical values.
-  /// * `precision`: Precision used when converting numbers to `String`.
+  /// Converts an object of type `List<num>` to [String].
+  /// * [label]: An optional label as first row.
+  /// * [delimiter]: Delimiter used to separate numerical values.
+  /// * [precision]: Precision used when converting numbers to `String`.
   String export({
     String label = '',
     String delimiter = ' ',

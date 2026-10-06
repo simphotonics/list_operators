@@ -1,4 +1,4 @@
-import 'must_have.dart';
+import '../iterable/must_have.dart';
 
 extension IntOperators on List<int> {
   /// Returns a new list consisting of the elements of `this` added to

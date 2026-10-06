@@ -21,7 +21,7 @@ Matcher closeToList<T extends num>(List<T> expected, num delta) =>
 /// A class extending [Matcher] that matches two numerical lists
 /// within a certain precision.
 class CloseToList<T extends num> extends Matcher {
-  CloseToList(this.expected, num delta) : delta = delta.abs();
+  new(this.expected, num delta) : delta = delta.abs();
 
   final List<T> expected;
   final num delta;

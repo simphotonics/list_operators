@@ -1,27 +1,15 @@
 import 'dart:math' as math;
 
-import 'must_have.dart';
+import '../iterable/must_have.dart';
 
-extension NumOperators on List<num> {
+extension NumericalOperators<T extends num> on List<T> {
   /// Returns a new list consisting of the elements of `this` added to
   /// the elements of `other`.
   ///
   /// Note: The operator `+` is already in use and concatenates two lists.
-  List<num> plus(List<num> other) {
+  List<T> plus(List<T> other) {
     mustHaveSameLength(other, operatorSymbol: '+');
-    if (this is List<int> && other is List<int>) {
-      return List<int>.generate(length, (i) => (this[i] as int) + other[i]);
-    }
-    if (other is List<double>) {
-      return List<double>.generate(length, (i) => other[i] + this[i]);
-    }
-    if (this is List<double>) {
-      return List<double>.generate(
-        length,
-        (i) => (this[i] as double) + other[i],
-      );
-    }
-    return List<num>.generate(length, (i) => this[i] + other[i]);
+    return List<T>.generate(length, (i) => (this[i] + other[i]) as T);
   }
 
   /// Returns a new list with elements raised to the power of `scalar`.

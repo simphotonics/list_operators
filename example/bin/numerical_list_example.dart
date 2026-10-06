@@ -34,29 +34,20 @@ void main() {
   print(a.exp(2));
   print('');
 
-  print('b.distanceFromOrigin()');
-  print(b.distanceFromOrigin);
-  print('');
-
-  print('b.distance(a)');
-  print(b.distance(a));
-  print('');
-
   /// Dart built-in operator:
   print('Concatenation:');
   print(a + b);
   print('');
 
-  // Creating an unmodifiable list view (recursively)
-  print('Creating an unmodifiable list of an object of type List<List<T>>:');
+  // Creating an unmodifiable list (recursively)
+  print('Creating an unmodifiable list of lists:');
   final list = [
     ['one'],
     ['two'],
   ];
 
   // Extension works for objects of type List<T> and List<List<T>>
-  final listView = list.unmodifiable;
+  final listUnmodifiable = list.unmodifiable;
 
-  // Prints: UnmodifiableListView<UnmodifiableListView<String>>
-  print(listView.runtimeType);
+  print(listUnmodifiable);
 }
