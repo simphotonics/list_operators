@@ -2,8 +2,9 @@
 [![Dart](https://github.com/simphotonics/list_operators/actions/workflows/dart.yml/badge.svg)](https://github.com/simphotonics/list_operators/actions/workflows/dart.yml)
 
 ## Introduction
-The package [`list_operators`][list_operators] uses Dart Extensions to provide
-*operators* and *utility methods* for objects of type [List][List] and
+
+The package [`list_operators`][list_operators] provides *extension methods* and
+vector-style *operators* for objects of type [List][List] and
 [Iterable][Iterable].
 
 Note: The operators and methods listed below are *generative*
@@ -15,11 +16,11 @@ elements of `a` in place.
 
 Extensions on `List<T extends num>` make the following
 vector-style operators and methods availabe:
-* subtraction `a-b`: element by element,
+* subtraction `a - b`: element by element,
 * unary negation `-a`: negates every element,
-* scalar multiplication `a*x`: `x` is a `num`,
-* scalar division `a/x`: `x` is a `num`,
-* integer division `a~/x`: `x` is a `num`,
+* scalar multiplication `a * x`: `x` is a `num`,
+* scalar division `a / x`: `x` is a `num`,
+* integer division `a ~/ x`: where `x` is a `num`,
 * `a.plus(b)`: addition, element by element,
 * `a.innerProd(b)`: the inner product &Sigma;<sub>i</sub>
   (a<sub>i</sub> &middot;   b<sub>i</sub>),
@@ -52,7 +53,7 @@ in your `pubspec.yaml` file.
 The programs below demonstrates how to use operators and
 methods defined by the library `list_operators`.
 
-#### Methods and Operators For Objects of Type List\<num\>:
+### 1. Methods and Operators For Objects of Type List\<num\>:
 ```Dart
 import 'package:list_operators/list_operators.dart';
 
@@ -143,7 +144,7 @@ List<List<String>>
 ```
 </details><br/>
 
-#### Methods For Objects of Type Iterable\<num\>:
+### 2. Methods For Objects of Type Iterable\<num\>
 
 ```Dart
 import 'package:list_operators/list_operators.dart';
@@ -203,7 +204,7 @@ Sum: b.sum()
 
 </details><br/>
 
-#### Operators For Objects of Type Iterable\<T extends Comparable\>:
+### 3. Operators For Objects of Type Iterable\<T extends Comparable\>
 
 ```Dart
 import 'package:list_operators/iterable_operators.dart';
@@ -257,7 +258,7 @@ true
 ```
 </details><br/>
 
-#### Methods for Exporting Numerical Lists as a String:
+### 4. Methods for Exporting Numerical Lists as a String
 
 ```Dart
 import 'package:list_operators/list_operators.dart';
@@ -349,5 +350,7 @@ Please file feature requests and bugs at the [issue tracker][tracker].
 [list_operators]: https://pub.dev/packages/list_operators
 
 [List]: https://api.dart.dev/stable/dart-core/List-class.html
+
+[Iterable]: https://api.dart.dev/stable/dart-core/Iterable-class.html
 
 [example]: https://github.com/simphotonics/list_operators/tree/main/example
