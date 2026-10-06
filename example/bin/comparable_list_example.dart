@@ -1,4 +1,4 @@
-import 'package:list_operators/list_operators.dart';
+import 'package:list_operators/iterable_operators.dart';
 
 void main() {
   final a = [1, 2, 3];
