@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
 
-import 'package:list_operators/list_operators.dart';
+import 'package:list_operators/iterable_operators.dart';
 
 void main() {
   group('Comparison', () {
