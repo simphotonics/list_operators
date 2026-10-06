@@ -1,18 +1,15 @@
 import 'package:matcher/matcher.dart';
 
-/// Returns a matcher which returns `true` if `actual[i]`
-/// is larger equal `expected[i] - delta`
-/// and smaller equal `expected[i] + delta` for each index `i`.
+/// Returns a matcher which returns `true` if:
+/// `expected[i] - delta  < actual[i] <= expected[i] + delta`
+/// for each index `i`.
 ///
 /// Note: The lists `actual` and `expected` must have the same length.
 ///
-/// Usage:
 /// ```
-/// final actual = [9.5, 5.6, 2.8];
-/// final expected = [9.81, 5.7, 3];
-/// final delta = 0.5;
+/// // Usage:
 /// test('Comparing numerical lists', (){
-///   expect(actual, closeToList(expected, delta));
+///   expect([9.75, 5.69, 2.99], closeToList([9.81, 5.7, 3], 0.1));
 /// });
 /// ```
 Matcher closeToList<T extends num>(List<T> expected, num delta) =>
