@@ -1,3 +1,11 @@
+## 1.0.0
+- Removed support for Spherical, Cartesian, and Cylindrical coordinates.
+  (It you have used these methods in the past,
+   please leave a request in the [issue] tracker and I'll make them available.)
+- Added a separate package file: `iterable_operators.dart`. Import this file to
+get access to the comparison extension methods on
+`Iterable<T extends Comparable>`. 
+
 ## 0.5.1
 - Updated dependencies
 - Extension getter `unmodifiable` on `List<T>` and `List<List<T>>`
