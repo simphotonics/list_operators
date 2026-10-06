@@ -7,15 +7,8 @@ The package [`list_operators`][list_operators] provides *extension methods* and
 vector-style *operators* for objects of type [List][List] and
 [Iterable][Iterable].
 
-Note: The operators and methods listed below are *generative*
-in the sense that they
-return a new object.
-For example the unary negation operator `-a` applied to
-a list `a` returns a new list and does not modify the
-elements of `a` in place.
-
 Extensions on `List<T extends num>` make the following
-vector-style operators and methods availabe:
+vector-style operators and methods available:
 * subtraction `a - b`: element by element,
 * unary negation `-a`: negates every element,
 * scalar multiplication `a * x`: `x` is a `num`,
@@ -29,6 +22,13 @@ vector-style operators and methods availabe:
  `(a[i] - b[i]) <= precision` for each index `i`.
   Note: The corresponding matcher is named
   [`CloseToList`][CloseToList] in analogy with the package [`matcher`][matcher].
+
+* Note: The operators and methods listed above are *generative*
+  in the sense that they
+  return a new object.
+  For example the unary negation operator `-a` applied to
+  a list `a` returns a new list and does not modify the
+  elements of `a` in place.
 
 For objects of type `Iterable<T extends num>`, which includes lists and sets,
 the following methods are provided:
